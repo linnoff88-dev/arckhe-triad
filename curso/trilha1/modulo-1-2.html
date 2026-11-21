@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="O problema de um único modelo — viés de confirmação, pontos cegos estruturais e o custo de decisões sem revisão">
+  <title>O problema de um único modelo | TRIAD — INEMA.CLUB</title>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#FACC15',
+            dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' }
+          }
+        }
+      }
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    .dark .border-dark-600 { border-color: #374151; }
+    .dark .divide-dark-600 > :not([hidden]) ~ :not([hidden]) { border-color: #374151; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+
+    html:not(.dark) .text-emerald-400 { color: #059669; }
+    html:not(.dark) .bg-emerald-500\/20 { background-color: rgba(5, 150, 105, 0.12); }
+    html:not(.dark) .bg-emerald-500\/10 { background-color: rgba(5, 150, 105, 0.08); }
+    html:not(.dark) .border-emerald-500\/30 { border-color: rgba(5, 150, 105, 0.25); }
+    html:not(.dark) .hover\:bg-emerald-500\/30:hover { background-color: rgba(5, 150, 105, 0.18); }
+
+    html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; }
+    html:not(.dark) .text-primary { color: #a16207; }
+    html:not(.dark) .bg-primary\/10 { background-color: rgba(161, 98, 7, 0.08); }
+    html:not(.dark) .border-primary\/40 { border-color: rgba(161, 98, 7, 0.25); }
+    html:not(.dark) .text-sky-400 { color: #0369a1; }
+    html:not(.dark) .text-yellow-400 { color: #a16207; }
+    html:not(.dark) .hover\:text-sky-300:hover { color: #0284c7; }
+    html:not(.dark) .hover\:text-yellow-300:hover { color: #854d0e; }
+
+    html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255, 255, 255, 0.95); }
+  </style>
+</head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+
+  <!-- NAV -->
+  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-14">
+        <!-- Logo + INEMA.CLUB -->
+        <div class="flex items-center space-x-4">
+          <a href="../../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300">
+            <span class="text-2xl">⚡</span>
+            <span class="font-bold text-lg hidden sm:inline">TRIAD</span>
+          </a>
+          <span class="text-neutral-600">|</span>
+          <a href="https://inema.club" target="_blank" rel="noopener noreferrer" class="text-sky-400 hover:text-sky-300 text-sm font-medium">INEMA.CLUB</a>
+        </div>
+
+        <!-- Trilhas + Theme Toggle -->
+        <div class="flex items-center space-x-1 sm:space-x-2">
+          <a href="index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-emerald-400 bg-emerald-500/10">
+            <span class="sm:hidden">T1</span>
+            <span class="hidden sm:inline">Fundamentos</span>
+          </a>
+          <a href="../trilha2/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors">
+            <span class="sm:hidden">T2</span>
+            <span class="hidden sm:inline">Técnica</span>
+          </a>
+          <a href="../trilha3/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors">
+            <span class="sm:hidden">T3</span>
+            <span class="hidden sm:inline">Avançado</span>
+          </a>
+          <a href="../trilha4/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors">
+            <span class="sm:hidden">T4</span>
+            <span class="hidden sm:inline">Escala</span>
+          </a>
+
+          <!-- Theme Toggle -->
+          <button id="theme-toggle" aria-label="Alternar tema" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2">
+            <svg id="theme-toggle-dark-icon" aria-hidden="true" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+            </svg>
+            <svg id="theme-toggle-light-icon" aria-hidden="true" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- BREADCRUMB -->
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+    <div class="flex items-center space-x-2 text-sm text-neutral-400">
+      <a href="../../index.html" class="hover:text-emerald-400">Início</a>
+      <span>/</span>
+      <a href="index.html" class="hover:text-emerald-400">Trilha 1</a>
+      <span>/</span>
+      <span class="text-emerald-400">Módulo 1.2</span>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="bg-gradient-to-br from-emerald-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <span class="inline-block px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-semibold rounded-full mb-4">MÓDULO 1.2</span>
+      <h1 class="text-3xl sm:text-4xl font-bold mb-4">🧠 O problema de um único modelo</h1>
+      <p class="text-lg text-neutral-400 max-w-3xl">Por que múltiplos cérebros importam — viés de confirmação, pontos cegos e o custo de decisões sem revisão.</p>
+      <div class="grid grid-cols-4 gap-4 mt-8 max-w-2xl">
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+          <div class="text-xl font-bold text-emerald-400">7</div>
+          <div class="text-xs text-neutral-400">Tópicos</div>
+        </div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+          <div class="text-xl font-bold text-emerald-400">~30</div>
+          <div class="text-xs text-neutral-400">Minutos</div>
+        </div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+          <div class="text-xl font-bold text-emerald-400">Básico</div>
+          <div class="text-xs text-neutral-400">Nível</div>
+        </div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+          <div class="text-xl font-bold text-emerald-400">Teoria</div>
+          <div class="text-xs text-neutral-400">Tipo</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+    <!-- HERO IMAGE -->
+    <div class="mb-12">
+      <img src="../../assets/dez-modelos.png" alt="Escolha seu cérebro. Dez modelos. Uma conexão. Cada modelo tem pontos cegos diferentes." class="w-full h-auto rounded-2xl border border-dark-600 shadow-xl" loading="lazy">
+    </div>
+
+    <!-- TÓPICO 1 -->
+    <section id="topico-1" class="mb-16">
+      <div class="flex items-center space-x-4 mb-6">
+        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl flex-shrink-0">1</span>
+        <h2 class="text-2xl font-bold">🎯 Viés de confirmação em modelos únicos</h2>
+      </div>
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        Um modelo treinado em um corpus específico <strong class="text-emerald-400">amplifica os vieses desse corpus</strong> — e quando você pede ao próprio modelo para revisar a resposta, ele tende a confirmar o que já disse. O viés de confirmação não é um bug: é uma consequência estrutural de pesos compartilhados entre geração e avaliação.
+      </p>
+
+      <div class="bg-dark-800/50 rounded-xl border border-emerald-500/20 p-6 mb-6">
+        <h3 class="text-sm font-semibold text-emerald-400 mb-2">O que é</h3>
+        <p class="text-neutral-300">O viés de confirmação em LLMs é a tendência sistemática de um modelo concordar com sua própria saída quando solicitado a avaliá-la — mesmo quando a saída original contém erros factuais, lógicos ou estratégicos. A causa: os mesmos pesos que geraram a resposta avaliam a resposta.</p>
+      </div>
+
+      <div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl border border-emerald-500/30 p-6 mb-6">
+        <h3 class="text-lg font-semibold text-emerald-400 mb-4 flex items-center">
+          <span class="mr-2">🔬</span> Demonstração concreta
+        </h3>
+        <div class="space-y-3 text-neutral-300">
+          <p><strong class="text-emerald-400">Cenário:</strong> peça ao Claude para sugerir uma estratégia de pricing. Depois, na mesma conversa, peça: "Avalie criticamente essa estratégia".</p>
+          <p><strong class="text-emerald-400">Resultado típico:</strong> o modelo cita pequenas ressalvas estilísticas, mas mantém intacta a premissa central — porque a premissa veio dos mesmos pesos que agora julgam.</p>
+          <p><strong class="text-emerald-400">Contraste:</strong> abra uma nova conversa em outro modelo (GPT, DeepSeek) e cole a mesma estratégia. Frequentemente, a premissa central é o primeiro alvo.</p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+        <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+          <h4 class="font-bold text-red-400 mb-4">✗ Auto-revisão (mesmo modelo)</h4>
+          <ul class="space-y-2 text-neutral-300 text-sm">
+            <li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Confirma premissa central em ~80% dos casos</span></li>
+            <li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Critica apenas elementos periféricos (estilo, formatação)</span></li>
+            <li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Reforça vieses do corpus de treino</span></li>
+            <li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Falsa sensação de validação</span></li>
+          </ul>
+        </div>
+        <div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+          <h4 class="font-bold text-emerald-400 mb-4">✓ Revisão externa (outro modelo)</h4>
+          <ul class="space-y-2 text-neutral-300 text-sm">
+            <li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Questiona premissa central com frequência</span></li>
+            <li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Identifica lacunas factuais e lógicas</span></li>
+            <li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Traz vieses diferentes — que se cancelam</span></li>
+            <li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Validação real, não circular</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+        <h3 class="text-lg font-semibold mb-4">🔑 Conceitos-chave</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <div class="bg-dark-700 rounded-lg p-3"><span class="text-emerald-400 font-semibold">Pesos compartilhados</span><p class="text-sm text-neutral-400 mt-1">Geração e avaliação usam os mesmos parâmetros — daí a confirmação automática</p></div>
+          <div class="bg-dark-700 rounded-lg p-3"><span class="text-emerald-400 font-semibold">Viés do corpus</span><p class="text-sm text-neutral-400 mt-1">O modelo amplifica os padrões dominantes nos dados de treinamento</p></div>
+          <div class="bg-dark-700 rounded-lg p-3"><span class="text-emerald-400 font-semibold">Validação circular</span><p class="text-sm text-neutral-400 mt-1">Pedir ao mesmo modelo para se auto-avaliar gera certeza ilusória</p></div>
+          <div class="bg-dark-700 rounded-lg p-3"><span class="text-emerald-400 font-semibold">Crítica periférica</span><p class="text-sm text-neutral-400 mt-1">Auto-revisão tende a corrigir forma, raramente a substância</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TÓPICO 2 -->
+    <section id="topico-2" class="mb-16">
+      <div class="flex items-center space-x-4 mb-6">
+        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl flex-shrink-0">2</span>
+        <h2 class="text-2xl font-bold">🪞 Por que um modelo não consegue criticar a si mesmo</h2>
+      </div>
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        A limitação não é de prompt — é estrutural. <strong class="text-emerald-400">Os mesmos pesos que produziram o erro são incapazes de detectá-lo</strong>, porque o erro, para eles, é a saída de máxima probabilidade dado o input. Pedir "seja crítico" não muda os pesos.
+      </p>
+
+      <div class="bg-dark-800/50 rounded-xl border border-emerald-500/20 p-6 mb-6">
+        <h3 class="text-sm font-semibold text-emerald-400 mb-2">O que é</h3>
+        <p class="text-neutral-300">A auto-crítica em LLMs é uma simulação de crítica, não crítica real. O modelo gera tokens de "crítica" que parecem rigorosos, mas que partem do mesmo espaço de hipóteses que gerou a resposta original — portanto não pode acessar hipóteses fora desse espaço.</p>
+      </div>
+
+      <div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl border border-emerald-500/30 p-6 mb-6">
+        <h3 class="text-lg font-semibold text-emerald-400 mb-4 flex items-center">
+          <span class="mr-2">🧬</span> A analogia estrutural
+        </h3>
+        <p class="text-neutral-300 mb-3">Imagine pedir a um daltônico para verificar se sua escolha de cores está correta — usando os mesmos olhos. Não é uma questão de esforço ou prompt: o aparelho perceptivo é o limite.</p>
+        <p class="text-neutral-300">LLMs operam sob a mesma lógica. O modelo é o seu próprio limite. <strong class="text-emerald-400">A diversidade só entra pela porta da diversidade arquitetural.</strong></p>
+      </div>
+
+      <div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-6">
+        <h3 class="text-lg font-semibold mb-4">🧪 Os 3 modos de falha da auto-crítica</h3>
+        <div class="space-y-3 text-neutral-300">
+          <div class="flex items-start space-x-3"><span class="text-emerald-400 font-bold flex-shrink-0">1.</span><span><strong>Sycophancy:</strong> o modelo tende a concordar com o framing do usuário, especialmente quando o usuário é assertivo.</span></div>
+          <div class="flex items-start space-x-3"><span class="text-emerald-400 font-bold flex-shrink-0">2.</span><span><strong>Anchoring nos próprios tokens:</strong> a resposta anterior aparece no contexto e ancora a "crítica" como continuação coerente, não como ruptura.</span></div>
+          <div class="flex items-start space-x-3"><span class="text-emerald-400 font-bold flex-shrink-0">3.</span><span><strong>Mesmo espaço de hipóteses:</strong> o modelo só pode propor alternativas que ele próprio consideraria — não as que estão fora de sua distribuição.</span></div>
+        </div>
+      </div>
+
+      <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+        <h3 class="text-lg font-semibold text-primary mb-3 flex items-center">
+          <span class="mr-2">💡</span> Por que isso importa
+        </h3>
+        <p class="text-neutral-300">Quem trata um único LLM como "consultor + revisor" está confiando em validação circular. A crítica útil exige um aparelho perceptivo diferente do que gerou a resposta. Sem isso, você está apenas confirmando seus próprios vieses com mais palavras.</p>
+      </div>
+
+      <div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+        <h3 class="text-lg font-semibold mb-4">🔑 Conceitos-chave</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <div class="bg-dark-700 rounded-lg p-3"><span class="text-emerald-400 font-semibold">Limite estrutural</span><p class="text-sm text-neutral-400 mt-1">Não é falha de prompt — é o aparelho perceptivo do modelo</p></div>
+          <div class="bg-dark-700 rounded-lg p-3"><span class="text-emerald-400 font-semibold">Sycophancy</span><p class="text-sm text-neutral-400 mt-1">Tendência documentada de concordar com o framing do usuário</p></div>
+          <div class="bg-dark-700 rounded-lg p-3"><span class="text-emerald-400 font-semibold">Anchoring contextual</span><p class="text-sm text-neutral-400 mt-1">A resposta anterior no contexto ancora a "crítica" como continuação</p></div>
+          <div class="bg-dark-700 rounded-lg p-3"><span class="text-emerald-400 font-semibold">Espaço de hipóteses</span><p class="text-sm text-neutral-400 mt-1">O modelo não acessa alternativas fora de sua distribuição</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TÓPICO 3 -->
+    <section id="topico-3" class="mb-16">
+      <div class="flex items-center space-x-4 mb-6">
+        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl flex-shrink-0">3</span>
+        <h2 class="text-2xl font-bold">🧩 Diferentes arquiteturas, diferentes pontos cegos</h2>
+      </div>
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        Claude, GPT e DeepSeek não são "concorrentes equivalentes". Foram treinados com objetivos diferentes, em corpora diferentes, com arquiteturas diferentes. <strong class="text-emerald-400">Seus pontos cegos são diferentes — e é exatamente isso que os torna úteis em conjunto.</strong>
+      </p>
+
+      <div class="bg-dark-800/50 rounded-xl border border-emerald-500/20 p-6 mb-6">
+        <h3 class="text-sm font-semibold text-emerald-400 mb-2">O que é</h3>
+        <p class="text-neutral-300">Diversidade arquitetural é o princípio de combinar modelos com fundamentos técnicos diferentes — RLHF de fontes distintas, dados de pré-treino distintos, arquitetura interna distinta (dense vs Mixture-of-Experts) — para que seus erros não sejam correlacionados.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+        <div class="bg-dark-800 rounded-xl border border-emerald-500/30 p-5">
+          <h4 class="font-bold text-emerald-400 mb-2">Claude (Anthropic)</h4>
+          <p class="text-xs text-neutral-500 mb-3">RLHF pesado, Constitutional AI</p>
+          <p class="text-sm text-neutral-300 mb-2"><strong>Força:</strong> raciocínio de longo contexto, nuance ética, escrita refinada.</p>
+          <p class="text-sm text-neutral-300"><strong>Ponto cego:</strong> excesso de hedging, aversão a posições firmes, conservadorismo em recomendações.</p>
+        </div>
+        <div class="bg-dark-800 rounded-xl border border-emerald-500/30 p-5">
+          <h4 class="font-bold text-emerald-400 mb-2">GPT (OpenAI)</h4>
+          <p class="text-xs text-neutral-500 mb-3">RLHF amplo, tool use nativo</p>
+          <p class="text-sm text-neutral-300 mb-2"><strong>Força:</strong> generalização cross-domain, instrução-following, uso de ferramentas.</p>
+          <p class="text-sm text-neutral-300"><strong>Ponto cego:</strong> respostas convergentes para a média, dificuldade em quebrar consenso popular.</p>
+        </div>
+        <div class="bg-dark-800 rounded-xl border border-emerald-500/30 p-5">
+          <h4 class="font-bold text-emerald-400 mb-2">DeepSeek</h4>
+          <p class="text-xs text-neutral-500 mb-3">Mixture-of-Experts, reasoning-first</p>
+          <p class="text-sm text-neutral-300 mb-2"><strong>Força:</strong> matemática, código, raciocínio em cadeia, custo baixo.</p>
+          <p class="text-sm text-neutral-300"><strong>Ponto cego:</strong> menos alinhamento de tom, contexto cultural ocidental menos refinado.</p>
+        </div>
+      </div>
+
+      <div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl border border-emerald-500/30 p-6 mb-6">
+        <h3 class="text-lg font-semibold text-emerald-400 mb-4 flex items-center">
+          <span class="mr-2">⚙️</span> Princípio da descorrelação de erros
+        </h3>
+        <p class="text-neutral-300 mb-3">Se três modelos cometem erros correlacionados, o conjunto não te ajuda — todos erram no mesmo ponto. Se cometem erros descorrelacionados, a interseção das três respostas filtra os erros idiossincráticos.</p>
+        <p class="text-neutral-300"><strong class="text-emerald-400">Diversidade arquitetural ≠ múltiplas instâncias do mesmo modelo.</strong> Rodar Claude três vezes não é Triad — é o mesmo viés três vezes.</p>
+      </div>
+
+      <div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+        <h3 class="text-lg font-semibold mb-4">🔑 Conceitos-chave</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <div class="bg-dark-700 rounded-lg p-3"><span class="text-emerald-400 font-semibold">Descorrelação de erros</span><p class="text-sm text-neutral-400 mt-1">A propriedade que torna a combinação de modelos mais robusta que cada um</p></div>
+          <div class="bg-dark-700 rounded-lg p-3"><span class="text-emerald-400 font-semibold">Constitutional AI vs RLHF amplo</span><p class="text-sm text-neutral-400 mt-1">Métodos de alinhamento distintos produzem pontos cegos distintos</p></div>
+          <div class="bg-dark-700 rounded-lg p-3"><span class="text-emerald-400 font-semibold">MoE vs Dense</span><p class="text-sm text-neutral-400 mt-1">Arquitetura interna diferente — DeepSeek roteia por especialistas; Claude/GPT são densos</p></div>
+          <div class="bg-dark-700 rounded-lg p-3"><span class="text-emerald-400 font-semibold">Multi-instância ≠ multi-modelo</span><p class="text-sm text-neutral-400 mt-1">Rodar o mesmo modelo várias vezes amplifica o viés, não corrige</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TÓPICO 4 -->
+    <section id="topico-4" class="mb-16">
+      <div class="flex items-center space-x-4 mb-6">
+        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl flex-shrink-0">4</span>
+        <h2 class="text-2xl font-bold">📚 Pesquisa: Reflexion e multi-agent critique</h2>
+      </div>
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        O Triad não é folclore — é a destilação prática de uma onda de papers entre 2023 e 2025 que mostrou, com benchmarks, que <strong class="text-emerald-400">crítica externa e debate multi-agente superam consistentemente um único modelo</strong>, mesmo quando esse modelo é maior.
+      </p>
+
+      <div class="bg-dark-800/50 rounded-xl border border-emerald-500/20 p-6 mb-6">
+        <h3 class="text-sm font-semibold text-emerald-400 mb-2">O que é</h3>
+        <p class="text-neutral-300">Multi-agent critique é a família de técnicas em que dois ou mais agentes LLM revisam e debatem as saídas uns dos outros antes de uma resposta final. A pesquisa mostrou ganhos consistentes em raciocínio, factualidade e código.</p>
+      </div>
+
+      <div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl border-l-4 border-emerald-400 p-6 mb-6">
+        <p class="text-neutral-300 italic mb-4">"Reflexion agents use verbal reinforcement to help agents learn from prior failings. Reflexion converts binary or scalar feedback from the environment into verbal feedback in the form of a textual summary, which is then added as additional context for the LLM agent in the next episode."</p>
+        <p class="text-sm text-emerald-400">— Shinn et al., <em>Reflexion: Language Agents with Verbal Reinforcement Learning</em> (NeurIPS 2023)</p>
+      </div>
+
+      <div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-6">
+        <h3 class="text-lg font-semibold mb-4">📅 Timeline da evidência</h3>
+        <div class="space-y-4">
+          <div class="flex items-start space-x-4">
+            <div class="flex-shrink-0 w-20 text-emerald-400 font-bold text-sm">Mar/2023</div>
+            <div class="flex-1 border-l-2 border-emerald-500/30 pl-4">
+              <p class="text-neutral-300"><strong>Du et al. — Improving Factuality and Reasoning via Multiagent Debate.</strong> Mostra que múltiplos LLMs debatendo aumentam factualidade em benchmarks como GSM8K e MMLU.</p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-4">
+            <div class="flex-shrink-0 w-20 text-emerald-400 font-bold text-sm">Mai/2023</div>
+            <div class="flex-1 border-l-2 border-emerald-500/30 pl-4">
+              <p class="text-neutral-300"><strong>Liang et al. — Encouraging Divergent Thinking in LLMs via Multi-Agent Debate.</strong> Argumenta que debate reduz "Degeneration-of-Thought" — o ciclo de auto-confirmação.</p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-4">
+            <div class="flex-shrink-0 w-20 text-emerald-400 font-bold text-sm">Out/2023</div>
+            <div class="flex-1 border-l-2 border-emerald-500/30 pl-4">
+              <p class="text-neutral-300"><strong>Shinn et al. — Reflexion.</strong> Loop de auto-reflexão com feedback verbal melhora desempenho em tarefas de raciocínio sequencial em até 22%.</p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-4">
+            <div class="flex-shrink-0 w-20 text-emerald-400 font-bold text-sm">2024–25</div>
+            <div class="flex-1 border-l-2 border-emerald-500/30 pl-4">
+              <p class="text-neutral-300"><strong>Onda multi-agent.</strong> Frameworks como AutoGen, CrewAI, LangGraph operacionalizam o padrão. Resultado consensual: crítica de modelo diferente &gt; auto-crítica.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+        <h3 class="text-lg font-semibold mb-4">🔑 Conceitos-chave</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <div class="bg-dark-700 rounded-lg p-3"><span class="text-emerald-400 font-semibold">Reflexion</span><p class="text-sm text-neutral-400 mt-1">Reforço verbal via feedback textual entre iterações — Shinn et al. 2023</p></div>
+          <div class="bg-dark-700 rounded-lg p-3"><span class="text-emerald-400 font-semibold">Multi-agent debate</span><p class="text-sm text-neutral-400 mt-1">Du et al. e Liang et al. mostram ganho de factualidade com debate inter-modelo</p></div>
+          <div class="bg-dark-700 rounded-lg p-3"><span class="text-emerald-400 font-semibold">Degeneration-of-Thought</span><p class="text-sm text-neutral-400 mt-1">Termo de Liang et al. para o ciclo de auto-confirmação dentro de um único modelo</p></div>
+          <div class="bg-dark-700 rounded-lg p-3"><span class="text-emerald-400 font-semibold">Ganho mensurado</span><p class="text-sm text-neutral-400 mt-1">Até 22% em benchmarks de raciocínio — evidência empírica, não opinião</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TÓPICO 5 -->
+    <section id="topico-5" class="mb-16">
+      <div class="flex items-center space-x-4 mb-6">
+        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl flex-shrink-0">5</span>
+        <h2 class="text-2xl font-bold">💸 O custo de decisões ruins por falta de revisão</h2>
+      </div>
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        Cada erro de modelo único tem um preço — em dinheiro, tempo, oportunidades. <strong class="text-emerald-400">O custo de uma segunda opinião é trivial comparado ao custo de uma decisão errada executada por completo.</strong>
+      </p>
+
+      <div class="bg-dark-800/50 rounded-xl border border-emerald-500/20 p-6 mb-6">
+        <h3 class="text-sm font-semibold text-emerald-400 mb-2">O que é</h3>
+        <p class="text-neutral-300">O custo da ausência de revisão é a diferença entre o resultado obtido por uma decisão validada apenas por um modelo único versus uma decisão refinada por revisão externa. Tipicamente é assimétrico: pequenas economias em revisão vs grandes perdas em execução de decisão errada.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+        <div class="bg-dark-800 rounded-xl border border-red-500/30 p-5">
+          <div class="text-3xl font-bold text-red-400 mb-2">$50k–$500k</div>
+          <p class="text-sm text-neutral-400">Custo médio de um pivot estratégico errado validado apenas por auto-revisão de LLM (estimativa conservadora — desenvolvimento + lançamento + tempo de equipe).</p>
+        </div>
+        <div class="bg-dark-800 rounded-xl border border-red-500/30 p-5">
+          <div class="text-3xl font-bold text-red-400 mb-2">40–120h</div>
+          <p class="text-sm text-neutral-400">Tempo de retrabalho em código que passou apenas pela auto-crítica do modelo gerador — bugs estruturais que crítica externa pegaria em minutos.</p>
+        </div>
+        <div class="bg-dark-800 rounded-xl border border-red-500/30 p-5">
+          <div class="text-3xl font-bold text-red-400 mb-2">3–6 meses</div>
+          <p class="text-sm text-neutral-400">Janela típica de oportunidade perdida quando uma decisão de produto baseada em premissa não validada vai ao mercado antes de ser questionada.</p>
+        </div>
+      </div>
+
+      <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+        <h3 class="text-lg font-semibold text-primary mb-3 flex items-center">
+          <span class="mr-2">📊</span> A matemática do custo
+        </h3>
+        <p class="text-neutral-300 mb-3">Considere uma decisão de $100k de impacto com 30% de chance de estar errada quando validada por modelo único, vs 10% quando validada por Triad.</p>
+        <p class="text-neutral-300 mb-3"><strong>Expected loss (modelo único):</strong> 0,30 × $100k = <strong class="text-red-400">$30.000</strong></p>
+        <p class="text-neutral-300 mb-3"><strong>Expected loss (Triad):</strong> 0,10 × $100k = <strong class="text-emerald-400">$10.000</strong></p>
+        <p class="text-neutral-300"><strong>Custo extra da revisão Triad:</strong> ~$2–5 em API calls. Razão custo-benefício: 4.000:1 a 10.000:1.</p>
+      </div>
+
+      <div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+        <h3 class="text-lg font-semibold mb-4">🔑 Conceitos-chave</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <div class="bg-dark-700 rounded-lg p-3"><span class="text-emerald-400 font-semibold">Assimetria de custo</span><p class="text-sm text-neutral-400 mt-1">Pequeno custo de revisão vs grande custo de execução errada</p></div>
+          <div class="bg-dark-700 rounded-lg p-3"><span class="text-emerald-400 font-semibold">Expected loss</span><p class="text-sm text-neutral-400 mt-1">Probabilidade de erro × impacto financeiro — métrica para decidir quando aplicar Triad</p></div>
+          <div class="bg-dark-700 rounded-lg p-3"><span class="text-emerald-400 font-semibold">Oportunidade perdida</span><p class="text-sm text-neutral-400 mt-1">Custo invisível mas frequentemente maior que o custo direto</p></div>
+          <div class="bg-dark-700 rounded-lg p-3"><span class="text-emerald-400 font-semibold">Razão 4.000:1</span><p class="text-sm text-neutral-400 mt-1">Ordem de grandeza típica do retorno de uma revisão multi-modelo bem feita</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TÓPICO 6 -->
+    <section id="topico-6" class="mb-16">
+      <div class="flex items-center space-x-4 mb-6">
+        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl flex-shrink-0">6</span>
+        <h2 class="text-2xl font-bold">🔁 O princípio WD-40 — melhoria por loops rápidos</h2>
+      </div>
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        O lubrificante WD-40 leva o nome da quadragésima tentativa: Water Displacement, 40th formula. <strong class="text-emerald-400">Os 39 anteriores foram falhas curtas e baratas</strong> — não uma única "tentativa perfeita" planejada por meses. A lição vale exatamente para LLMs: iteração curta vence reflexão longa.
+      </p>
+
+      <div class="bg-dark-800/50 rounded-xl border border-emerald-500/20 p-6 mb-6">
+        <h3 class="text-sm font-semibold text-emerald-400 mb-2">O que é</h3>
+        <p class="text-neutral-300">O princípio WD-40 é o método de progresso por loops rápidos de tentativa-feedback-correção, com cada loop curto o suficiente para não ser custoso. No Triad: o loop Executor → Crítico → Executor é a versão computacional do mesmo princípio.</p>
+      </div>
+
+      <div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl border border-emerald-500/30 p-6 mb-6">
+        <h3 class="text-lg font-semibold text-emerald-400 mb-4 flex items-center">
+          <span class="mr-2">📅</span> Anatomia da iteração WD-40
+        </h3>
+        <div class="space-y-3">
+          <div class="flex items-start space-x-4">
+            <div class="flex-shrink-0 w-24 text-emerald-400 font-bold text-sm">Tentativas 1–10</div>
+            <div class="flex-1 border-l-2 border-emerald-500/30 pl-4">
+              <p class="text-neutral-300 text-sm">Eliminação de ideias obviamente erradas. Cada teste rápido descarta uma classe inteira de soluções.</p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-4">
+            <div class="flex-shrink-0 w-24 text-emerald-400 font-bold text-sm">Tentativas 11–30</div>
+            <div class="flex-1 border-l-2 border-emerald-500/30 pl-4">
+              <p class="text-neutral-300 text-sm">Refinamento das hipóteses sobreviventes. O espaço de busca encolhe iterativamente.</p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-4">
+            <div class="flex-shrink-0 w-24 text-emerald-400 font-bold text-sm">Tentativas 31–39</div>
+            <div class="flex-1 border-l-2 border-emerald-500/30 pl-4">
+              <p class="text-neutral-300 text-sm">Ajustes finos. Cada tentativa carrega o aprendizado das 30+ anteriores.</p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-4">
+            <div class="flex-shrink-0 w-24 text-emerald-400 font-bold text-sm">Tentativa 40</div>
+            <div class="flex-1 border-l-2 border-emerald-500/30 pl-4">
+              <p class="text-neutral-300 text-sm"><strong class="text-emerald-400">A fórmula funciona.</strong> Não porque foi planejada — porque sobreviveu a 39 ciclos de feedback.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+        <h3 class="text-lg font-semibold text-primary mb-3 flex items-center">
+          <span class="mr-2">💡</span> Aplicação direta no Triad
+        </h3>
+        <p class="text-neutral-300">Cada ciclo Executor → Crítico → Executor é uma iteração WD-40. Em vez de tentar acertar de primeira (impossível), você roda 3–5 ciclos curtos. Cada ciclo descarta uma classe de erros. Loop curto vence reflexão longa porque o feedback é externo, não imaginado.</p>
+      </div>
+
+      <div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+        <h3 class="text-lg font-semibold mb-4">🔑 Conceitos-chave</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <div class="bg-dark-700 rounded-lg p-3"><span class="text-emerald-400 font-semibold">Loop curto &gt; reflexão longa</span><p class="text-sm text-neutral-400 mt-1">Feedback externo rápido supera deliberação interna prolongada</p></div>
+          <div class="bg-dark-700 rounded-lg p-3"><span class="text-emerald-400 font-semibold">Custo por iteração baixo</span><p class="text-sm text-neutral-400 mt-1">Cada ciclo precisa ser barato — caro o suficiente e você converge para "uma tentativa só"</p></div>
+          <div class="bg-dark-700 rounded-lg p-3"><span class="text-emerald-400 font-semibold">Encolhimento do espaço de busca</span><p class="text-sm text-neutral-400 mt-1">Cada iteração descarta uma classe de soluções, não apenas uma instância</p></div>
+          <div class="bg-dark-700 rounded-lg p-3"><span class="text-emerald-400 font-semibold">Aprendizado acumulado</span><p class="text-sm text-neutral-400 mt-1">A tentativa N traz consigo o resultado das N-1 anteriores</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TÓPICO 7 -->
+    <section id="topico-7" class="mb-16">
+      <div class="flex items-center space-x-4 mb-6">
+        <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl flex-shrink-0">7</span>
+        <h2 class="text-2xl font-bold">⚡ Como o Triad resolve o problema de viés único</h2>
+      </div>
+      <p class="text-neutral-300 mb-6 leading-relaxed">
+        Os seis tópicos anteriores convergem para uma solução prática: <strong class="text-emerald-400">três modelos arquiteturalmente diferentes, em três papéis distintos, conectados por loops curtos de feedback.</strong> É a aplicação operacional de tudo o que a pesquisa multi-agent mostrou funcionar.
+      </p>
+
+      <div class="bg-dark-800/50 rounded-xl border border-emerald-500/20 p-6 mb-6">
+        <h3 class="text-sm font-semibold text-emerald-400 mb-2">O que é</h3>
+        <p class="text-neutral-300">O Triad é um sistema de três papéis especializados — Condutor, Executor e Crítico — atribuídos a três modelos arquiteturalmente diferentes. Cada papel explora a força do seu modelo e é compensado pelos pontos cegos dos outros via loops curtos de revisão.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+        <div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl border border-emerald-500/30 p-5">
+          <div class="text-xs text-neutral-500 mb-1">PAPEL 1</div>
+          <h4 class="font-bold text-emerald-400 mb-2">🎯 Condutor</h4>
+          <p class="text-xs text-neutral-500 mb-3">Claude Opus</p>
+          <p class="text-sm text-neutral-300">Transforma objetivo vago em briefing preciso. Define critérios mensuráveis. Valida o resultado final contra esses critérios.</p>
+        </div>
+        <div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl border border-emerald-500/30 p-5">
+          <div class="text-xs text-neutral-500 mb-1">PAPEL 2</div>
+          <h4 class="font-bold text-emerald-400 mb-2">⚙️ Executor</h4>
+          <p class="text-xs text-neutral-500 mb-3">DeepSeek</p>
+          <p class="text-sm text-neutral-300">Explora 3–5 ângulos com premissas diferentes. Produz drafts em paralelo. Custo baixo permite múltiplas iterações.</p>
+        </div>
+        <div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl border border-emerald-500/30 p-5">
+          <div class="text-xs text-neutral-500 mb-1">PAPEL 3</div>
+          <h4 class="font-bold text-emerald-400 mb-2">🔍 Crítico</h4>
+          <p class="text-xs text-neutral-500 mb-3">GPT-5.5</p>
+          <p class="text-sm text-neutral-300">Aplica SHIP/REVISE/FUNDAMENTAL FLAW. Crítica específica com localização. Quebra a auto-confirmação do Executor.</p>
+        </div>
+      </div>
+
+      <div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl border border-emerald-500/30 p-6 mb-6">
+        <h3 class="text-lg font-semibold text-emerald-400 mb-4 flex items-center">
+          <span class="mr-2">🔗</span> Como cada elemento ataca um problema deste módulo
+        </h3>
+        <div class="space-y-3 text-neutral-300">
+          <div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><span><strong>Viés de confirmação (tópico 1)</strong> → o Crítico é outro modelo, não o Executor. A revisão é externa por design.</span></div>
+          <div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><span><strong>Modelo não pode criticar a si mesmo (tópico 2)</strong> → três aparelhos perceptivos diferentes, três espaços de hipóteses.</span></div>
+          <div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><span><strong>Pontos cegos distintos (tópico 3)</strong> → Claude/DeepSeek/GPT têm arquiteturas e treinos diferentes. Erros descorrelacionados.</span></div>
+          <div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><span><strong>Multi-agent critique (tópico 4)</strong> → o loop Executor-Crítico é a operacionalização do Reflexion + debate.</span></div>
+          <div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><span><strong>Custo de decisão ruim (tópico 5)</strong> → razão 4.000:1 entre custo de revisão e perda evitada.</span></div>
+          <div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><span><strong>Loops WD-40 (tópico 6)</strong> → cada ciclo Executor→Crítico→Executor é barato e descarta uma classe de erro.</span></div>
+        </div>
+      </div>
+
+      <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+        <h3 class="text-lg font-semibold text-primary mb-3 flex items-center">
+          <span class="mr-2">🎯</span> O que vem a seguir
+        </h3>
+        <p class="text-neutral-300">No próximo módulo, você verá em detalhe a arquitetura do Triad: como os três papéis se comunicam, qual é o fluxo de mensagens, e por que essa estrutura específica (e não outra) é a que materializa todos os princípios deste módulo.</p>
+      </div>
+
+      <div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+        <h3 class="text-lg font-semibold mb-4">🔑 Conceitos-chave</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <div class="bg-dark-700 rounded-lg p-3"><span class="text-emerald-400 font-semibold">Três papéis, três modelos</span><p class="text-sm text-neutral-400 mt-1">Condutor/Executor/Crítico em Claude/DeepSeek/GPT — diversidade por design</p></div>
+          <div class="bg-dark-700 rounded-lg p-3"><span class="text-emerald-400 font-semibold">Crítico externo</span><p class="text-sm text-neutral-400 mt-1">A revisão nunca é feita pelo mesmo modelo que produziu o draft</p></div>
+          <div class="bg-dark-700 rounded-lg p-3"><span class="text-emerald-400 font-semibold">Loop curto operacional</span><p class="text-sm text-neutral-400 mt-1">Cada ciclo Executor-Crítico é uma iteração WD-40 computacional</p></div>
+          <div class="bg-dark-700 rounded-lg p-3"><span class="text-emerald-400 font-semibold">Síntese dos 6 tópicos</span><p class="text-sm text-neutral-400 mt-1">O Triad ataca cada problema deste módulo com um elemento específico do sistema</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESUMO -->
+    <section class="mb-12">
+      <div class="bg-gradient-to-br from-emerald-900/40 via-dark-800 to-dark-800 rounded-xl border border-emerald-500/30 p-8">
+        <h2 class="text-2xl font-bold mb-6 flex items-center">
+          <span class="mr-3">✅</span> Resumo do Módulo
+        </h2>
+
+        <div class="space-y-4 mb-8">
+          <div class="flex items-start space-x-3">
+            <span class="text-emerald-400 mt-1">✓</span>
+            <div><strong class="text-white">Viés de confirmação é estrutural</strong><span class="text-neutral-400"> — pesos compartilhados entre geração e avaliação tornam a auto-revisão circular</span></div>
+          </div>
+          <div class="flex items-start space-x-3">
+            <span class="text-emerald-400 mt-1">✓</span>
+            <div><strong class="text-white">Auto-crítica é simulação</strong><span class="text-neutral-400"> — sycophancy, anchoring contextual e mesmo espaço de hipóteses limitam o que o modelo consegue questionar</span></div>
+          </div>
+          <div class="flex items-start space-x-3">
+            <span class="text-emerald-400 mt-1">✓</span>
+            <div><strong class="text-white">Diversidade arquitetural</strong><span class="text-neutral-400"> — Claude, GPT e DeepSeek têm pontos cegos diferentes; rodar o mesmo modelo várias vezes não substitui isso</span></div>
+          </div>
+          <div class="flex items-start space-x-3">
+            <span class="text-emerald-400 mt-1">✓</span>
+            <div><strong class="text-white">Pesquisa multi-agent</strong><span class="text-neutral-400"> — Reflexion, debate e crítica externa têm evidência empírica de até 22% de ganho em raciocínio</span></div>
+          </div>
+          <div class="flex items-start space-x-3">
+            <span class="text-emerald-400 mt-1">✓</span>
+            <div><strong class="text-white">Custo assimétrico</strong><span class="text-neutral-400"> — razão 4.000:1 entre o custo de uma revisão Triad e a perda evitada de uma decisão errada</span></div>
+          </div>
+          <div class="flex items-start space-x-3">
+            <span class="text-emerald-400 mt-1">✓</span>
+            <div><strong class="text-white">Princípio WD-40</strong><span class="text-neutral-400"> — loops curtos com feedback externo vencem reflexão longa interna. O Triad é a versão computacional disso</span></div>
+          </div>
+        </div>
+
+        <div class="bg-dark-800/50 rounded-lg p-4 mb-8">
+          <h3 class="font-semibold text-emerald-400 mb-2">Próximo Módulo:</h3>
+          <p class="text-neutral-300">1.3 — O Sistema Triad</p>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="index.html" class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors">
+            ← Voltar para Trilha 1
+          </a>
+          <a href="modulo-1-3.html" class="flex-1 text-center px-6 py-3 bg-emerald-600 text-white rounded-lg font-semibold hover:bg-emerald-500 transition-colors">
+            Próximo Módulo →
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-dark-600 py-8 mt-16">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+      <p>TRIAD — <a href="https://inema.club" target="_blank" rel="noopener noreferrer" class="text-sky-400 hover:text-sky-300">INEMA.CLUB</a> · 2026</p>
+    </div>
+  </footer>
+
+  <script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+    const html = document.documentElement;
+
+    if (localStorage.getItem('theme') === 'light' || (!localStorage.getItem('theme') && !html.classList.contains('dark'))) {
+      themeToggleDarkIcon.classList.remove('hidden');
+      html.classList.remove('dark');
+    } else {
+      themeToggleLightIcon.classList.remove('hidden');
+    }
+
+    themeToggle.addEventListener('click', () => {
+      themeToggleDarkIcon.classList.toggle('hidden');
+      themeToggleLightIcon.classList.toggle('hidden');
+      html.classList.toggle('dark');
+      localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+    });
+  </script>
+
+</body>
+</html>
