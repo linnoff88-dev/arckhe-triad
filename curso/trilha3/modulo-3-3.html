@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Monitoramento, logs e saúde do sistema Hermes — dashboard, alertas e ritual diário de revisão">
+  <meta name="description" content="Monitoramento, logs e saúde do sistema Hermes — dashboard, alertas e ritual diário de revisêo">
   <title>Monitoramento, logs e saúde | TRIAD — INEMA.CLUB</title>
   <script>
     tailwind.config = {
@@ -162,23 +162,23 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
         <div class="bg-gradient-to-br from-purple-900/30 to-dark-800 rounded-xl border border-purple-500/30 p-6">
           <h4 class="font-bold text-purple-400 mb-4">1. Disponibilidade</h4>
-          <p class="text-sm text-neutral-300 mb-3">O Hermes responde quando você o chama? Os modelos configurados estão acessíveis?</p>
-          <p class="text-xs text-neutral-400">Verificar: resposta a uma pergunta simples, acesso ao soul.md, execução de ferramenta básica.</p>
+          <p class="text-sm text-neutral-300 mb-3">O Hermes responde quando você o chama? Os modelos configurados estêo acessíveis?</p>
+          <p class="text-xs text-neutral-400">Verificar: resposta a uma pergunta simples, acesso ao soul.md, execuçêo de ferramenta básica.</p>
         </div>
         <div class="bg-gradient-to-br from-purple-900/30 to-dark-800 rounded-xl border border-purple-500/30 p-6">
           <h4 class="font-bold text-purple-400 mb-4">2. Custo</h4>
-          <p class="text-sm text-neutral-300 mb-3">O gasto está dentro do orçamento definido? Há anomalias em relação à média dos últimos dias?</p>
+          <p class="text-sm text-neutral-300 mb-3">O gasto está dentro do orçamento definido? Há anomalias em relaçêo à média dos últimos dias?</p>
           <p class="text-xs text-neutral-400">Verificar: dashboard do OpenRouter, custo de ontem vs média de 7 dias.</p>
         </div>
         <div class="bg-gradient-to-br from-purple-900/30 to-dark-800 rounded-xl border border-purple-500/30 p-6">
           <h4 class="font-bold text-purple-400 mb-4">3. Qualidade</h4>
-          <p class="text-sm text-neutral-300 mb-3">Os outputs do Triad estão sendo aprovados em menos de 3 iterações? O Crítico está convergindo?</p>
+          <p class="text-sm text-neutral-300 mb-3">Os outputs do Triad estêo sendo aprovados em menos de 3 iterações? O Crítico está convergindo?</p>
           <p class="text-xs text-neutral-400">Verificar: log de execuções, número médio de iterações nas últimas 5 tarefas.</p>
         </div>
         <div class="bg-gradient-to-br from-purple-900/30 to-dark-800 rounded-xl border border-purple-500/30 p-6">
           <h4 class="font-bold text-purple-400 mb-4">4. Saúde do soul.md</h4>
           <p class="text-sm text-neutral-300 mb-3">As informações do soul.md ainda refletem a realidade atual? Mudanças importantes foram registradas?</p>
-          <p class="text-xs text-neutral-400">Verificar: data da última atualização, resposta do Hermes quando perguntado sobre contexto atual.</p>
+          <p class="text-xs text-neutral-400">Verificar: data da última atualizaçêo, resposta do Hermes quando perguntado sobre contexto atual.</p>
         </div>
       </div>
 
@@ -187,8 +187,8 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
           <div class="bg-dark-700 rounded-lg p-3"><span class="text-purple-400 font-semibold">Quatro categorias</span><p class="text-sm text-neutral-400 mt-1">Disponibilidade, custo, qualidade e saúde do soul.md — cada uma detecta tipos diferentes de problemas</p></div>
           <div class="bg-dark-700 rounded-lg p-3"><span class="text-purple-400 font-semibold">Deriva silenciosa</span><p class="text-sm text-neutral-400 mt-1">O sistema pode degradar gradualmente sem que nenhum evento único indique o problema</p></div>
-          <div class="bg-dark-700 rounded-lg p-3"><span class="text-purple-400 font-semibold">Monitoramento como prevenção</span><p class="text-sm text-neutral-400 mt-1">Detectar antes das consequências é o objetivo — não remediar depois</p></div>
-          <div class="bg-dark-700 rounded-lg p-3"><span class="text-purple-400 font-semibold">Atualidade do soul.md</span><p class="text-sm text-neutral-400 mt-1">soul.md desatualizado é uma forma de degradação de qualidade — o contexto está errado</p></div>
+          <div class="bg-dark-700 rounded-lg p-3"><span class="text-purple-400 font-semibold">Monitoramento como prevençêo</span><p class="text-sm text-neutral-400 mt-1">Detectar antes das consequências é o objetivo — nêo remediar depois</p></div>
+          <div class="bg-dark-700 rounded-lg p-3"><span class="text-purple-400 font-semibold">Atualidade do soul.md</span><p class="text-sm text-neutral-400 mt-1">soul.md desatualizado é uma forma de degradaçêo de qualidade — o contexto está errado</p></div>
         </div>
       </div>
     </section>
@@ -214,11 +214,11 @@
         <div class="space-y-3">
           <div class="flex items-start space-x-3">
             <code class="font-mono bg-dark-700 px-2 py-1 rounded text-purple-400 text-sm flex-shrink-0">~/.hermes/logs/</code>
-            <p class="text-sm text-neutral-300">Diretório raiz dos logs. Cada sessão gera um arquivo com timestamp no nome.</p>
+            <p class="text-sm text-neutral-300">Diretório raiz dos logs. Cada sessêo gera um arquivo com timestamp no nome.</p>
           </div>
           <div class="flex items-start space-x-3">
             <code class="font-mono bg-dark-700 px-2 py-1 rounded text-purple-400 text-sm flex-shrink-0">session-YYYY-MM-DD.log</code>
-            <p class="text-sm text-neutral-300">Arquivo de log por sessão. Contém todas as chamadas de modelo, ferramentas executadas e decisões do agente.</p>
+            <p class="text-sm text-neutral-300">Arquivo de log por sessêo. Contém todas as chamadas de modelo, ferramentas executadas e decisões do agente.</p>
           </div>
         </div>
       </div>
@@ -228,15 +228,15 @@
         <div class="space-y-3">
           <div class="flex items-start space-x-3">
             <code class="font-mono bg-dark-700 px-2 py-1 rounded text-purple-400 text-sm flex-shrink-0">hermes logs --last 10</code>
-            <p class="text-sm text-neutral-300">Mostra os últimos 10 eventos do log mais recente. Ideal para verificação rápida do que aconteceu.</p>
+            <p class="text-sm text-neutral-300">Mostra os últimos 10 eventos do log mais recente. Ideal para verificaçêo rápida do que aconteceu.</p>
           </div>
           <div class="flex items-start space-x-3">
             <code class="font-mono bg-dark-700 px-2 py-1 rounded text-purple-400 text-sm flex-shrink-0">hermes logs --session [ID]</code>
-            <p class="text-sm text-neutral-300">Log completo de uma sessão específica. Use quando precisar reconstruir o que aconteceu em uma tarefa específica.</p>
+            <p class="text-sm text-neutral-300">Log completo de uma sessêo específica. Use quando precisar reconstruir o que aconteceu em uma tarefa específica.</p>
           </div>
           <div class="flex items-start space-x-3">
             <code class="font-mono bg-dark-700 px-2 py-1 rounded text-purple-400 text-sm flex-shrink-0">hermes logs --cost</code>
-            <p class="text-sm text-neutral-300">Resumo de custo por sessão — tokens consumidos e valor gasto por chamada de modelo.</p>
+            <p class="text-sm text-neutral-300">Resumo de custo por sessêo — tokens consumidos e valor gasto por chamada de modelo.</p>
           </div>
         </div>
       </div>
@@ -245,7 +245,7 @@
         <h3 class="text-sm font-semibold text-purple-400 mb-2">Conceitos-chave</h3>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
           <div class="bg-dark-700 rounded-lg p-3"><span class="text-purple-400 font-semibold">~/.hermes/logs/</span><p class="text-sm text-neutral-400 mt-1">Diretório raiz dos logs — primeiro lugar a verificar quando algo vai errado</p></div>
-          <div class="bg-dark-700 rounded-lg p-3"><span class="text-purple-400 font-semibold">hermes logs --last</span><p class="text-sm text-neutral-400 mt-1">Comando de verificação rápida para os eventos mais recentes</p></div>
+          <div class="bg-dark-700 rounded-lg p-3"><span class="text-purple-400 font-semibold">hermes logs --last</span><p class="text-sm text-neutral-400 mt-1">Comando de verificaçêo rápida para os eventos mais recentes</p></div>
           <div class="bg-dark-700 rounded-lg p-3"><span class="text-purple-400 font-semibold">Tokens e custo por chamada</span><p class="text-sm text-neutral-400 mt-1">Os logs registram custo granular — permite identificar chamadas mais caras</p></div>
           <div class="bg-dark-700 rounded-lg p-3"><span class="text-purple-400 font-semibold">Diagnóstico retroativo</span><p class="text-sm text-neutral-400 mt-1">Logs permitem reconstruir decisões do agente sem depender de memória</p></div>
         </div>
@@ -273,7 +273,7 @@
         <div class="space-y-4">
           <div class="flex items-start space-x-3">
             <span class="text-purple-400 font-bold flex-shrink-0">1.</span>
-            <div><strong class="text-white">Custo do dia anterior vs média dos últimos 7 dias</strong><p class="text-sm text-neutral-400 mt-1">Anomalia: custo 2x+ acima da média. Indica: loop runaway, tarefa inesperadamente cara ou configuração errada.</p></div>
+            <div><strong class="text-white">Custo do dia anterior vs média dos últimos 7 dias</strong><p class="text-sm text-neutral-400 mt-1">Anomalia: custo 2x+ acima da média. Indica: loop runaway, tarefa inesperadamente cara ou configuraçêo errada.</p></div>
           </div>
           <div class="flex items-start space-x-3">
             <span class="text-purple-400 font-bold flex-shrink-0">2.</span>
@@ -281,7 +281,7 @@
           </div>
           <div class="flex items-start space-x-3">
             <span class="text-purple-400 font-bold flex-shrink-0">3.</span>
-            <div><strong class="text-white">Taxa de erro por modelo</strong><p class="text-sm text-neutral-400 mt-1">Anomalia: taxa de erro acima de 5%. Indica: problema de configuração, modelo em instabilidade ou rate limit crônico.</p></div>
+            <div><strong class="text-white">Taxa de erro por modelo</strong><p class="text-sm text-neutral-400 mt-1">Anomalia: taxa de erro acima de 5%. Indica: problema de configuraçêo, modelo em instabilidade ou rate limit crônico.</p></div>
           </div>
           <div class="flex items-start space-x-3">
             <span class="text-purple-400 font-bold flex-shrink-0">4.</span>
@@ -293,9 +293,9 @@
       <div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
         <h3 class="text-sm font-semibold text-purple-400 mb-2">Conceitos-chave</h3>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-          <div class="bg-dark-700 rounded-lg p-3"><span class="text-purple-400 font-semibold">Revisão diária de 2 minutos</span><p class="text-sm text-neutral-400 mt-1">O ritual mínimo de manutenção — custo vs anomalia, modelo mais caro, taxa de erro</p></div>
-          <div class="bg-dark-700 rounded-lg p-3"><span class="text-purple-400 font-semibold">Custo vs média 7 dias</span><p class="text-sm text-neutral-400 mt-1">A comparação mais útil para detectar anomalias rapidamente</p></div>
-          <div class="bg-dark-700 rounded-lg p-3"><span class="text-purple-400 font-semibold">Taxa de erro</span><p class="text-sm text-neutral-400 mt-1">Acima de 5% indica problema que precisa de investigação imediata</p></div>
+          <div class="bg-dark-700 rounded-lg p-3"><span class="text-purple-400 font-semibold">Revisêo diária de 2 minutos</span><p class="text-sm text-neutral-400 mt-1">O ritual mínimo de manutençêo — custo vs anomalia, modelo mais caro, taxa de erro</p></div>
+          <div class="bg-dark-700 rounded-lg p-3"><span class="text-purple-400 font-semibold">Custo vs média 7 dias</span><p class="text-sm text-neutral-400 mt-1">A comparaçêo mais útil para detectar anomalias rapidamente</p></div>
+          <div class="bg-dark-700 rounded-lg p-3"><span class="text-purple-400 font-semibold">Taxa de erro</span><p class="text-sm text-neutral-400 mt-1">Acima de 5% indica problema que precisa de investigaçêo imediata</p></div>
           <div class="bg-dark-700 rounded-lg p-3"><span class="text-purple-400 font-semibold">Latência por modelo</span><p class="text-sm text-neutral-400 mt-1">Latência alta indica sobrecarga do provedor — avaliar se vale mudar para fallback temporariamente</p></div>
         </div>
       </div>
@@ -309,7 +309,7 @@
       </div>
       <h3 class="text-sm font-semibold text-purple-400 mb-2">O que é</h3>
       <p class="text-neutral-300 mb-6 leading-relaxed">
-        Alertas proativos eliminam a necessidade de monitoramento ativo constante. <strong class="text-purple-400">Você age quando precisa, não monitora constantemente.</strong>
+        Alertas proativos eliminam a necessidade de monitoramento ativo constante. <strong class="text-purple-400">Você age quando precisa, nêo monitora constantemente.</strong>
       </p>
 
       <div class="border-t border-dark-700 pt-4 mt-4">
@@ -330,11 +330,11 @@
           </div>
           <div class="flex items-start space-x-3">
             <span class="w-8 h-8 rounded-full bg-purple-500/20 text-purple-400 flex items-center justify-center text-sm font-bold flex-shrink-0">3</span>
-            <div><strong class="text-white">Job agendado não completou no tempo esperado</strong><p class="text-sm text-neutral-400 mt-1">Hermes nativo. Indica tarefa presa, loop sem convergência ou falha silenciosa na execução.</p></div>
+            <div><strong class="text-white">Job agendado nêo completou no tempo esperado</strong><p class="text-sm text-neutral-400 mt-1">Hermes nativo. Indica tarefa presa, loop sem convergência ou falha silenciosa na execuçêo.</p></div>
           </div>
           <div class="flex items-start space-x-3">
             <span class="w-8 h-8 rounded-full bg-purple-500/20 text-purple-400 flex items-center justify-center text-sm font-bold flex-shrink-0">4</span>
-            <div><strong class="text-white">soul.md não atualizado há mais de 30 dias</strong><p class="text-sm text-neutral-400 mt-1">Verificação periódica manual ou via script. soul.md desatualizado = contexto desalinhado = outputs menos relevantes.</p></div>
+            <div><strong class="text-white">soul.md nêo atualizado há mais de 30 dias</strong><p class="text-sm text-neutral-400 mt-1">Verificaçêo periódica manual ou via script. soul.md desatualizado = contexto desalinhado = outputs menos relevantes.</p></div>
           </div>
         </div>
       </div>
@@ -350,9 +350,9 @@
         <h3 class="text-sm font-semibold text-purple-400 mb-2">Conceitos-chave</h3>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
           <div class="bg-dark-700 rounded-lg p-3"><span class="text-purple-400 font-semibold">Alerta de custo</span><p class="text-sm text-neutral-400 mt-1">Primeiro sinal de loop runaway ou tarefa inesperadamente cara</p></div>
-          <div class="bg-dark-700 rounded-lg p-3"><span class="text-purple-400 font-semibold">Alerta de rate limit crônico</span><p class="text-sm text-neutral-400 mt-1">429 repetido indica problema estrutural — não é falha temporária, precisa de ação</p></div>
-          <div class="bg-dark-700 rounded-lg p-3"><span class="text-purple-400 font-semibold">soul.md stale</span><p class="text-sm text-neutral-400 mt-1">30 dias sem atualização é o threshold para considerar o contexto desatualizado</p></div>
-          <div class="bg-dark-700 rounded-lg p-3"><span class="text-purple-400 font-semibold">Telegram como canal</span><p class="text-sm text-neutral-400 mt-1">Notificação imediata no celular — mais confiável que email para alertas críticos</p></div>
+          <div class="bg-dark-700 rounded-lg p-3"><span class="text-purple-400 font-semibold">Alerta de rate limit crônico</span><p class="text-sm text-neutral-400 mt-1">429 repetido indica problema estrutural — nêo é falha temporária, precisa de açêo</p></div>
+          <div class="bg-dark-700 rounded-lg p-3"><span class="text-purple-400 font-semibold">soul.md stale</span><p class="text-sm text-neutral-400 mt-1">30 dias sem atualizaçêo é o threshold para considerar o contexto desatualizado</p></div>
+          <div class="bg-dark-700 rounded-lg p-3"><span class="text-purple-400 font-semibold">Telegram como canal</span><p class="text-sm text-neutral-400 mt-1">Notificaçêo imediata no celular — mais confiável que email para alertas críticos</p></div>
         </div>
       </div>
     </section>
@@ -361,11 +361,11 @@
     <section id="topico-5" class="mb-16">
       <div class="flex items-center space-x-4 mb-6">
         <span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl flex-shrink-0">5</span>
-        <h2 class="text-2xl font-bold">⏱️ Revisão diária — o ritual de 5 minutos</h2>
+        <h2 class="text-2xl font-bold">⏱️ Revisêo diária — o ritual de 5 minutos</h2>
       </div>
       <h3 class="text-sm font-semibold text-purple-400 mb-2">O que é</h3>
       <p class="text-neutral-300 mb-6 leading-relaxed">
-        5 minutos por dia de revisão previne horas de debugging quando algo vai errado. <strong class="text-purple-400">É o custo de manutenção mais barato possível</strong> para um sistema de produção.
+        5 minutos por dia de revisêo previne horas de debugging quando algo vai errado. <strong class="text-purple-400">É o custo de manutençêo mais barato possível</strong> para um sistema de produçêo.
       </p>
 
       <div class="border-t border-dark-700 pt-4 mt-4">
@@ -387,7 +387,7 @@
           </div>
           <div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600">
             <h4 class="font-semibold mb-2">Verificar jobs incompletos no Hermes (1 min)</h4>
-            <p class="text-sm text-neutral-400"><code class="font-mono bg-dark-700 px-1 rounded text-purple-400">hermes jobs --status</code>. Tarefas com status "running" por mais de 12 horas merecem investigação.</p>
+            <p class="text-sm text-neutral-400"><code class="font-mono bg-dark-700 px-1 rounded text-purple-400">hermes jobs --status</code>. Tarefas com status "running" por mais de 12 horas merecem investigaçêo.</p>
           </div>
         </div>
         <div class="flex items-start space-x-4">
@@ -420,10 +420,10 @@
       <div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
         <h3 class="text-sm font-semibold text-purple-400 mb-2">Conceitos-chave</h3>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-          <div class="bg-dark-700 rounded-lg p-3"><span class="text-purple-400 font-semibold">Ritual de 5 minutos</span><p class="text-sm text-neutral-400 mt-1">O custo de manutenção mínimo para um sistema de produção confiável</p></div>
-          <div class="bg-dark-700 rounded-lg p-3"><span class="text-purple-400 font-semibold">Resumo diário automático</span><p class="text-sm text-neutral-400 mt-1">Hermes pode enviar o sumário proativamente — elimina a necessidade de verificação manual</p></div>
+          <div class="bg-dark-700 rounded-lg p-3"><span class="text-purple-400 font-semibold">Ritual de 5 minutos</span><p class="text-sm text-neutral-400 mt-1">O custo de manutençêo mínimo para um sistema de produçêo confiável</p></div>
+          <div class="bg-dark-700 rounded-lg p-3"><span class="text-purple-400 font-semibold">Resumo diário automático</span><p class="text-sm text-neutral-400 mt-1">Hermes pode enviar o sumário proativamente — elimina a necessidade de verificaçêo manual</p></div>
           <div class="bg-dark-700 rounded-lg p-3"><span class="text-purple-400 font-semibold">soul.md vs realidade atual</span><p class="text-sm text-neutral-400 mt-1">Verificar se o contexto ainda reflete mudanças recentes no seu negócio ou objetivos</p></div>
-          <div class="bg-dark-700 rounded-lg p-3"><span class="text-purple-400 font-semibold">Prevenção vs remediação</span><p class="text-sm text-neutral-400 mt-1">5 min/dia de prevenção custa menos que horas de diagnóstico e recuperação</p></div>
+          <div class="bg-dark-700 rounded-lg p-3"><span class="text-purple-400 font-semibold">Prevençêo vs remediaçêo</span><p class="text-sm text-neutral-400 mt-1">5 min/dia de prevençêo custa menos que horas de diagnóstico e recuperaçêo</p></div>
         </div>
       </div>
     </section>
@@ -436,7 +436,7 @@
       </div>
       <h3 class="text-sm font-semibold text-purple-400 mb-2">O que é</h3>
       <p class="text-neutral-300 mb-6 leading-relaxed">
-        Loops infinitos são o bug mais caro de um sistema de IA agêntica. <strong class="text-purple-400">Um loop overnight sem parada pode consumir créditos significativos</strong> antes de ser detectado manualmente.
+        Loops infinitos sêo o bug mais caro de um sistema de IA agêntica. <strong class="text-purple-400">Um loop overnight sem parada pode consumir créditos significativos</strong> antes de ser detectado manualmente.
       </p>
 
       <div class="border-t border-dark-700 pt-4 mt-4">
@@ -448,30 +448,30 @@
         </h3>
         <ul class="space-y-3 text-neutral-300">
           <li class="flex items-start space-x-2"><span class="text-purple-400 mt-1">•</span><span><strong>Número de iterações crescendo sem convergência</strong> — 10, 15, 20 iterações sem que o Crítico retorne SHIP</span></li>
-          <li class="flex items-start space-x-2"><span class="text-purple-400 mt-1">•</span><span><strong>Mesmo tipo de reprovação repetindo</strong> — o Crítico reprova com o mesmo motivo 3+ vezes consecutivas</span></li>
+          <li class="flex items-start space-x-2"><span class="text-purple-400 mt-1">•</span><span><strong>Mesmo tipo de reprovaçêo repetindo</strong> — o Crítico reprova com o mesmo motivo 3+ vezes consecutivas</span></li>
           <li class="flex items-start space-x-2"><span class="text-purple-400 mt-1">•</span><span><strong>Custo subindo sem entrega</strong> — tokens consumidos aumentando sem que o resultado seja retornado</span></li>
-          <li class="flex items-start space-x-2"><span class="text-purple-400 mt-1">•</span><span><strong>Hermes "trabalhando" sem retornar resultado</strong> — sessão ativa por mais tempo que o esperado para a tarefa</span></li>
+          <li class="flex items-start space-x-2"><span class="text-purple-400 mt-1">•</span><span><strong>Hermes "trabalhando" sem retornar resultado</strong> — sessêo ativa por mais tempo que o esperado para a tarefa</span></li>
         </ul>
       </div>
 
       <div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-6">
-        <h3 class="text-lg font-semibold mb-4">🛡️ Proteção contra loops infinitos — instrução no Worker</h3>
+        <h3 class="text-lg font-semibold mb-4">🛡️ Proteçêo contra loops infinitos — instruçêo no Worker</h3>
         <div class="bg-dark-700/50 rounded-lg p-4 font-mono text-sm text-neutral-300 space-y-1">
           <p>"Se o Crítico retornar REVISE com o mesmo problema</p>
           <p>pela terceira vez consecutiva:</p>
           <p class="ml-4">1. Pare de tentar resolver o problema diretamente</p>
-          <p class="ml-4">2. Sinalize STUCK: [descrição do problema recorrente]</p>
+          <p class="ml-4">2. Sinalize STUCK: [descriçêo do problema recorrente]</p>
           <p class="ml-4">3. Escale para o Condutor com o contexto completo</p>
-          <p class="ml-4">4. Não tente uma quarta iteração do mesmo ângulo"</p>
+          <p class="ml-4">4. Nêo tente uma quarta iteraçêo do mesmo ângulo"</p>
         </div>
       </div>
 
       <div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
         <h3 class="text-sm font-semibold text-purple-400 mb-2">Conceitos-chave</h3>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-          <div class="bg-dark-700 rounded-lg p-3"><span class="text-purple-400 font-semibold">Sinal STUCK</span><p class="text-sm text-neutral-400 mt-1">O Worker sinaliza que não consegue avançar — visível e recuperável, não silencioso</p></div>
+          <div class="bg-dark-700 rounded-lg p-3"><span class="text-purple-400 font-semibold">Sinal STUCK</span><p class="text-sm text-neutral-400 mt-1">O Worker sinaliza que nêo consegue avançar — visível e recuperável, nêo silencioso</p></div>
           <div class="bg-dark-700 rounded-lg p-3"><span class="text-purple-400 font-semibold">Escala para o Condutor</span><p class="text-sm text-neutral-400 mt-1">O Condutor tem contexto para reformular o briefing e desbloquear o loop</p></div>
-          <div class="bg-dark-700 rounded-lg p-3"><span class="text-purple-400 font-semibold">Limite de iterações como proteção</span><p class="text-sm text-neutral-400 mt-1">Três tentativas consecutivas com o mesmo problema é o threshold padrão</p></div>
+          <div class="bg-dark-700 rounded-lg p-3"><span class="text-purple-400 font-semibold">Limite de iterações como proteçêo</span><p class="text-sm text-neutral-400 mt-1">Três tentativas consecutivas com o mesmo problema é o threshold padrêo</p></div>
           <div class="bg-dark-700 rounded-lg p-3"><span class="text-purple-400 font-semibold">Custo crescente como sinal</span><p class="text-sm text-neutral-400 mt-1">Custo subindo sem entrega é um sinal objetivo de loop — verificável no dashboard</p></div>
         </div>
       </div>
@@ -485,7 +485,7 @@
       </div>
       <h3 class="text-sm font-semibold text-purple-400 mb-2">O que é</h3>
       <p class="text-neutral-300 mb-6 leading-relaxed">
-        O histórico de decisões é o dado bruto para melhoria contínua. <strong class="text-purple-400">Sem revisão periódica, você perde a oportunidade de aprender</strong> com o que o sistema já fez.
+        O histórico de decisões é o dado bruto para melhoria contínua. <strong class="text-purple-400">Sem revisêo periódica, você perde a oportunidade de aprender</strong> com o que o sistema já fez.
       </p>
 
       <div class="border-t border-dark-700 pt-4 mt-4">
@@ -514,7 +514,7 @@
           </div>
           <div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600">
             <h4 class="font-semibold mb-2">Quais tipos de tarefa foram delegados com mais frequência?</h4>
-            <p class="text-sm text-neutral-400">Revele o padrão de uso real vs o planejado. Tipos de tarefa frequentes são candidatos a persona especializada.</p>
+            <p class="text-sm text-neutral-400">Revele o padrêo de uso real vs o planejado. Tipos de tarefa frequentes sêo candidatos a persona especializada.</p>
           </div>
         </div>
         <div class="flex items-start space-x-4">
@@ -532,7 +532,7 @@
           </div>
           <div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600">
             <h4 class="font-semibold mb-2">Quais foram reprovados pelo Crítico mais vezes?</h4>
-            <p class="text-sm text-neutral-400">Padrão de reprovação recorrente indica gap sistemático no briefing do Condutor para esse tipo de tarefa.</p>
+            <p class="text-sm text-neutral-400">Padrêo de reprovaçêo recorrente indica gap sistemático no briefing do Condutor para esse tipo de tarefa.</p>
           </div>
         </div>
         <div class="flex items-start space-x-4">
@@ -540,8 +540,8 @@
             <span class="text-purple-400 font-bold">4</span>
           </div>
           <div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600">
-            <h4 class="font-semibold mb-2">Adicionar insights à seção Memory do soul.md</h4>
-            <p class="text-sm text-neutral-400">Os insights da análise vão para o soul.md como contexto permanente. O Hermes passa a levar em conta esses padrões em execuções futuras.</p>
+            <h4 class="font-semibold mb-2">Adicionar insights à seçêo Memory do soul.md</h4>
+            <p class="text-sm text-neutral-400">Os insights da análise vêo para o soul.md como contexto permanente. O Hermes passa a levar em conta esses padrões em execuções futuras.</p>
           </div>
         </div>
       </div>
@@ -550,8 +550,8 @@
         <h3 class="text-sm font-semibold text-purple-400 mb-2">Conceitos-chave</h3>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
           <div class="bg-dark-700 rounded-lg p-3"><span class="text-purple-400 font-semibold">~/.hermes/memory/</span><p class="text-sm text-neutral-400 mt-1">Arquivo de decisões — a base para análise de padrões e melhoria contínua</p></div>
-          <div class="bg-dark-700 rounded-lg p-3"><span class="text-purple-400 font-semibold">Tipos de tarefa com melhor ROI</span><p class="text-sm text-neutral-400 mt-1">Onde o sistema entrega mais valor — informa onde aumentar a delegação</p></div>
-          <div class="bg-dark-700 rounded-lg p-3"><span class="text-purple-400 font-semibold">Padrão de reprovação</span><p class="text-sm text-neutral-400 mt-1">Gap sistemático que se manifesta como reprovação recorrente do Crítico</p></div>
+          <div class="bg-dark-700 rounded-lg p-3"><span class="text-purple-400 font-semibold">Tipos de tarefa com melhor ROI</span><p class="text-sm text-neutral-400 mt-1">Onde o sistema entrega mais valor — informa onde aumentar a delegaçêo</p></div>
+          <div class="bg-dark-700 rounded-lg p-3"><span class="text-purple-400 font-semibold">Padrêo de reprovaçêo</span><p class="text-sm text-neutral-400 mt-1">Gap sistemático que se manifesta como reprovaçêo recorrente do Crítico</p></div>
           <div class="bg-dark-700 rounded-lg p-3"><span class="text-purple-400 font-semibold">Insights para o soul.md</span><p class="text-sm text-neutral-400 mt-1">O mecanismo de aprendizado — o Hermes incorpora padrões ao seu contexto permanente</p></div>
         </div>
       </div>
@@ -575,7 +575,7 @@
           </div>
           <div class="flex items-start space-x-3">
             <span class="text-purple-400 mt-1">✓</span>
-            <div><strong class="text-white">2 minutos no OpenRouter</strong><span class="text-neutral-400"> — revisão diária mínima para detectar anomalias financeiras</span></div>
+            <div><strong class="text-white">2 minutos no OpenRouter</strong><span class="text-neutral-400"> — revisêo diária mínima para detectar anomalias financeiras</span></div>
           </div>
           <div class="flex items-start space-x-3">
             <span class="text-purple-400 mt-1">✓</span>
@@ -583,7 +583,7 @@
           </div>
           <div class="flex items-start space-x-3">
             <span class="text-purple-400 mt-1">✓</span>
-            <div><strong class="text-white">Sinal STUCK</strong><span class="text-neutral-400"> — proteção contra loops infinitos com escala automática para o Condutor</span></div>
+            <div><strong class="text-white">Sinal STUCK</strong><span class="text-neutral-400"> — proteçêo contra loops infinitos com escala automática para o Condutor</span></div>
           </div>
           <div class="flex items-start space-x-3">
             <span class="text-purple-400 mt-1">✓</span>

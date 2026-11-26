@@ -1,4 +1,4 @@
-﻿# TRIAD â€” AutomaÃ§Ã£o de IA Multi-Modelo com Hermes Agent
+ï»¿# TRIAD ê¢â¬â AutomaêÂ§êÂ£o de IA Multi-Modelo com Hermes Agent
 
 <div align="center">
   <img src="capa/logo.svg" alt="Arckhé AI" height="48" />

@@ -118,7 +118,7 @@
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <span class="inline-block px-3 py-1 bg-blue-500/20 text-blue-400 text-xs font-semibold rounded-full mb-4">MÓDULO 2.3</span>
       <h1 class="text-3xl sm:text-4xl font-bold mb-4">🤖 Integrando DeepSeek V4 como Worker do Triad</h1>
-      <p class="text-lg text-neutral-400 max-w-3xl">Chave própria, BYOK no OpenRouter e rate limits independentes para loops overnight sem interrupção.</p>
+      <p class="text-lg text-neutral-400 max-w-3xl">Chave própria, BYOK no OpenRouter e rate limits independentes para loops overnight sem interrupçêo.</p>
       <div class="grid grid-cols-4 gap-4 mt-8 max-w-2xl">
         <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
           <div class="text-xl font-bold text-blue-400">7</div>
@@ -149,7 +149,7 @@
         <h2 class="text-2xl font-bold">💡 Por que ter chave própria DeepSeek no OpenRouter</h2>
       </div>
       <p class="text-neutral-300 mb-6 leading-relaxed">
-        Quando você usa DeepSeek pelo pool padrão do OpenRouter, está dividindo um rate limit compartilhado com milhares de outros usuários. <strong class="text-blue-400">Com BYOK (Bring Your Own Key), seu rate limit é dedicado</strong> — e loops overnight do Triad rodam sem 429 no meio da madrugada.
+        Quando você usa DeepSeek pelo pool padrêo do OpenRouter, está dividindo um rate limit compartilhado com milhares de outros usuários. <strong class="text-blue-400">Com BYOK (Bring Your Own Key), seu rate limit é dedicado</strong> — e loops overnight do Triad rodam sem 429 no meio da madrugada.
       </p>
 
       <div class="bg-dark-800/50 rounded-xl border border-blue-500/20 p-6 mb-6">
@@ -171,7 +171,7 @@
           <h4 class="font-bold text-blue-400 mb-4">✓ Rate limit dedicado (BYOK)</h4>
           <ul class="space-y-2 text-neutral-300 text-sm">
             <li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>Limites isolados na sua conta DeepSeek</span></li>
-            <li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>Loop overnight conclui sem interrupção</span></li>
+            <li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>Loop overnight conclui sem interrupçêo</span></li>
             <li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>Custo direto ao provedor (sem margem)</span></li>
             <li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>Logs e billing centralizados no DeepSeek</span></li>
           </ul>
@@ -185,15 +185,15 @@
         <div class="space-y-3 text-neutral-300">
           <div class="flex items-start space-x-3">
             <span class="text-blue-400 mt-1 flex-shrink-0">•</span>
-            <span>O <strong>Worker</strong> é o papel com maior volume de chamadas — explora 3–5 ângulos em paralelo por iteração</span>
+            <span>O <strong>Worker</strong> é o papel com maior volume de chamadas — explora 3–5 ângulos em paralelo por iteraçêo</span>
           </div>
           <div class="flex items-start space-x-3">
             <span class="text-blue-400 mt-1 flex-shrink-0">•</span>
-            <span>O loop Worker-Crítico pode iterar 3–8x por tarefa — multiplicação direta de requests</span>
+            <span>O loop Worker-Crítico pode iterar 3–8x por tarefa — multiplicaçêo direta de requests</span>
           </div>
           <div class="flex items-start space-x-3">
             <span class="text-blue-400 mt-1 flex-shrink-0">•</span>
-            <span>Em modo overnight, isso vira centenas de calls por hora — pool compartilhado não aguenta</span>
+            <span>Em modo overnight, isso vira centenas de calls por hora — pool compartilhado nêo aguenta</span>
           </div>
         </div>
       </div>
@@ -204,7 +204,7 @@
           <div class="bg-dark-700 rounded-lg p-3"><span class="text-blue-400 font-semibold">BYOK = isolamento de rate limit</span><p class="text-sm text-neutral-400 mt-1">Sua chave, seu pool, seu limite — independente de outros usuários do OpenRouter</p></div>
           <div class="bg-dark-700 rounded-lg p-3"><span class="text-blue-400 font-semibold">Worker = papel de maior volume</span><p class="text-sm text-neutral-400 mt-1">É onde o custo de rate limit dói mais — 3–5 ângulos × N iterações</p></div>
           <div class="bg-dark-700 rounded-lg p-3"><span class="text-blue-400 font-semibold">Sem margem OR no BYOK</span><p class="text-sm text-neutral-400 mt-1">Você paga preço direto do provedor — OpenRouter só roteia</p></div>
-          <div class="bg-dark-700 rounded-lg p-3"><span class="text-blue-400 font-semibold">Overnight exige limites dedicados</span><p class="text-sm text-neutral-400 mt-1">Loops longos sem supervisão não toleram 429 silencioso no pool</p></div>
+          <div class="bg-dark-700 rounded-lg p-3"><span class="text-blue-400 font-semibold">Overnight exige limites dedicados</span><p class="text-sm text-neutral-400 mt-1">Loops longos sem supervisêo nêo toleram 429 silencioso no pool</p></div>
         </div>
       </div>
     </section>
@@ -216,7 +216,7 @@
         <h2 class="text-2xl font-bold">💳 Criando conta + carregando créditos na DeepSeek Platform</h2>
       </div>
       <p class="text-neutral-300 mb-6 leading-relaxed">
-        DeepSeek é um dos provedores com melhor custo-benefício do mercado para Worker. <strong class="text-blue-400">$5–$10 em créditos rendem semanas de uso intenso</strong> no Triad — desde que você configure BYOK corretamente para não pagar margem dupla.
+        DeepSeek é um dos provedores com melhor custo-benefício do mercado para Worker. <strong class="text-blue-400">$5–$10 em créditos rendem semanas de uso intenso</strong> no Triad — desde que você configure BYOK corretamente para nêo pagar margem dupla.
       </p>
 
       <div class="bg-dark-800/50 rounded-xl border border-blue-500/20 p-6 mb-6">
@@ -230,9 +230,9 @@
         </h3>
         <ol class="space-y-3 text-neutral-300 list-decimal list-inside">
           <li>Acessar <span class="font-mono text-blue-400">platform.deepseek.com</span> e criar conta (email + senha ou OAuth)</li>
-          <li>Verificar email — sem verificação, billing fica bloqueado</li>
+          <li>Verificar email — sem verificaçêo, billing fica bloqueado</li>
           <li>Em <span class="font-mono text-blue-400">Billing → Top up</span>, carregar $5 ou $10 em créditos</li>
-          <li>Confirmar via cartão ou método regional disponível</li>
+          <li>Confirmar via cartêo ou método regional disponível</li>
           <li>Aguardar saldo refletir na dashboard (geralmente instantâneo)</li>
         </ol>
       </div>
@@ -241,9 +241,9 @@
         <h3 class="text-lg font-semibold text-primary mb-3 flex items-center">
           <span class="mr-2">💡</span> Estimativa de custo realista
         </h3>
-        <p class="text-neutral-300 mb-3">DeepSeek V4 cobra valores baixíssimos por milhão de tokens. Como referência prática:</p>
+        <p class="text-neutral-300 mb-3">DeepSeek V4 cobra valores baixíssimos por milhêo de tokens. Como referência prática:</p>
         <ul class="space-y-2 text-neutral-300 text-sm">
-          <li class="flex items-start space-x-2"><span class="text-primary">•</span><span>1 iteração Worker (3 ângulos, ~8k tokens cada) ≈ poucos centavos</span></li>
+          <li class="flex items-start space-x-2"><span class="text-primary">•</span><span>1 iteraçêo Worker (3 ângulos, ~8k tokens cada) ≈ poucos centavos</span></li>
           <li class="flex items-start space-x-2"><span class="text-primary">•</span><span>$5 cobrem dezenas a centenas de tarefas completas, dependendo do tamanho</span></li>
           <li class="flex items-start space-x-2"><span class="text-primary">•</span><span>Confira preços atuais em <span class="font-mono">platform.deepseek.com/api-docs/pricing</span> — mudam</span></li>
         </ul>
@@ -252,10 +252,10 @@
       <div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
         <h3 class="text-lg font-semibold mb-4">🔑 Conceitos-chave</h3>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-          <div class="bg-dark-700 rounded-lg p-3"><span class="text-blue-400 font-semibold">Conta pré-paga</span><p class="text-sm text-neutral-400 mt-1">DeepSeek opera em modelo pré-pago — sem cartão amarrado, sem surpresa de fatura</p></div>
+          <div class="bg-dark-700 rounded-lg p-3"><span class="text-blue-400 font-semibold">Conta pré-paga</span><p class="text-sm text-neutral-400 mt-1">DeepSeek opera em modelo pré-pago — sem cartêo amarrado, sem surpresa de fatura</p></div>
           <div class="bg-dark-700 rounded-lg p-3"><span class="text-blue-400 font-semibold">$5–$10 = semanas de uso</span><p class="text-sm text-neutral-400 mt-1">Custo unitário baixo do Worker permite cargas pequenas e longas</p></div>
-          <div class="bg-dark-700 rounded-lg p-3"><span class="text-blue-400 font-semibold">Verificação de email obrigatória</span><p class="text-sm text-neutral-400 mt-1">Sem verificar, billing fica travado e a chave não autoriza</p></div>
-          <div class="bg-dark-700 rounded-lg p-3"><span class="text-blue-400 font-semibold">Saldo ≠ rate limit</span><p class="text-sm text-neutral-400 mt-1">Ter crédito não significa requests ilimitados — DeepSeek aplica RPM/TPM por conta</p></div>
+          <div class="bg-dark-700 rounded-lg p-3"><span class="text-blue-400 font-semibold">Verificaçêo de email obrigatória</span><p class="text-sm text-neutral-400 mt-1">Sem verificar, billing fica travado e a chave nêo autoriza</p></div>
+          <div class="bg-dark-700 rounded-lg p-3"><span class="text-blue-400 font-semibold">Saldo ≠ rate limit</span><p class="text-sm text-neutral-400 mt-1">Ter crédito nêo significa requests ilimitados — DeepSeek aplica RPM/TPM por conta</p></div>
         </div>
       </div>
     </section>
@@ -267,7 +267,7 @@
         <h2 class="text-2xl font-bold">🔑 Gerando API key DeepSeek</h2>
       </div>
       <p class="text-neutral-300 mb-6 leading-relaxed">
-        A API key é o que conecta sua conta DeepSeek ao OpenRouter via BYOK. <strong class="text-blue-400">Ela só é exibida uma única vez</strong> — perdeu, gera outra. Não cometa o erro de salvá-la em código versionado.
+        A API key é o que conecta sua conta DeepSeek ao OpenRouter via BYOK. <strong class="text-blue-400">Ela só é exibida uma única vez</strong> — perdeu, gera outra. Nêo cometa o erro de salvá-la em código versionado.
       </p>
 
       <div class="bg-dark-800/50 rounded-xl border border-blue-500/20 p-6 mb-6">
@@ -294,7 +294,7 @@
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
         <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
-          <h4 class="font-bold text-red-400 mb-4">✗ Onde NÃO colocar a chave</h4>
+          <h4 class="font-bold text-red-400 mb-4">✗ Onde NêO colocar a chave</h4>
           <ul class="space-y-2 text-neutral-300 text-sm">
             <li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Hard-coded no código-fonte</span></li>
             <li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Em <span class="font-mono">config.json</span> versionado no git</span></li>
@@ -316,10 +316,10 @@
       <div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
         <h3 class="text-lg font-semibold mb-4">🔑 Conceitos-chave</h3>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-          <div class="bg-dark-700 rounded-lg p-3"><span class="text-blue-400 font-semibold">Formato sk-...</span><p class="text-sm text-neutral-400 mt-1">Padrão herdado da OpenAI, adotado por quase todos provedores</p></div>
-          <div class="bg-dark-700 rounded-lg p-3"><span class="text-blue-400 font-semibold">Exibida uma única vez</span><p class="text-sm text-neutral-400 mt-1">Não é recuperável — perdeu, revoga e gera nova</p></div>
-          <div class="bg-dark-700 rounded-lg p-3"><span class="text-blue-400 font-semibold">Nomeação descritiva</span><p class="text-sm text-neutral-400 mt-1">Um nome por uso facilita auditoria e revogação cirúrgica</p></div>
-          <div class="bg-dark-700 rounded-lg p-3"><span class="text-blue-400 font-semibold">Rotação sem dor</span><p class="text-sm text-neutral-400 mt-1">Revogar e gerar nova não afeta saldo nem histórico da conta</p></div>
+          <div class="bg-dark-700 rounded-lg p-3"><span class="text-blue-400 font-semibold">Formato sk-...</span><p class="text-sm text-neutral-400 mt-1">Padrêo herdado da OpenAI, adotado por quase todos provedores</p></div>
+          <div class="bg-dark-700 rounded-lg p-3"><span class="text-blue-400 font-semibold">Exibida uma única vez</span><p class="text-sm text-neutral-400 mt-1">Nêo é recuperável — perdeu, revoga e gera nova</p></div>
+          <div class="bg-dark-700 rounded-lg p-3"><span class="text-blue-400 font-semibold">Nomeaçêo descritiva</span><p class="text-sm text-neutral-400 mt-1">Um nome por uso facilita auditoria e revogaçêo cirúrgica</p></div>
+          <div class="bg-dark-700 rounded-lg p-3"><span class="text-blue-400 font-semibold">Rotaçêo sem dor</span><p class="text-sm text-neutral-400 mt-1">Revogar e gerar nova nêo afeta saldo nem histórico da conta</p></div>
         </div>
       </div>
     </section>
@@ -331,7 +331,7 @@
         <h2 class="text-2xl font-bold">🔗 Adicionando a chave no OpenRouter (BYOK)</h2>
       </div>
       <p class="text-neutral-300 mb-6 leading-relaxed">
-        Aqui acontece a mágica do BYOK. <strong class="text-blue-400">Você cola a chave DeepSeek dentro do OpenRouter</strong> em uma área específica de integrações — e a partir daí, qualquer chamada que use modelos DeepSeek será roteada pela sua chave, não pelo pool da plataforma.
+        Aqui acontece a mágica do BYOK. <strong class="text-blue-400">Você cola a chave DeepSeek dentro do OpenRouter</strong> em uma área específica de integrações — e a partir daí, qualquer chamada que use modelos DeepSeek será roteada pela sua chave, nêo pelo pool da plataforma.
       </p>
 
       <div class="bg-dark-800/50 rounded-xl border border-blue-500/20 p-6 mb-6">
@@ -355,7 +355,7 @@
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
         <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
-          <h4 class="font-bold text-red-400 mb-4">✗ Colocação errada da chave</h4>
+          <h4 class="font-bold text-red-400 mb-4">✗ Colocaçêo errada da chave</h4>
           <ul class="space-y-2 text-neutral-300 text-sm">
             <li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>No slot "Anthropic" ou "OpenAI" por engano</span></li>
             <li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Como header <span class="font-mono">Authorization</span> do client</span></li>
@@ -364,11 +364,11 @@
           </ul>
         </div>
         <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6">
-          <h4 class="font-bold text-blue-400 mb-4">✓ Colocação correta</h4>
+          <h4 class="font-bold text-blue-400 mb-4">✓ Colocaçêo correta</h4>
           <ul class="space-y-2 text-neutral-300 text-sm">
             <li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>Slot DeepSeek em Settings → Integrations</span></li>
             <li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>Status fica "BYOK active" verde após salvar</span></li>
-            <li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>Validação OK → próxima chamada já usa sua chave</span></li>
+            <li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>Validaçêo OK → próxima chamada já usa sua chave</span></li>
             <li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>Sua <span class="font-mono">OPENROUTER_API_KEY</span> continua sendo a do OR</span></li>
           </ul>
         </div>
@@ -385,8 +385,8 @@
         <h3 class="text-lg font-semibold mb-4">🔑 Conceitos-chave</h3>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
           <div class="bg-dark-700 rounded-lg p-3"><span class="text-blue-400 font-semibold">Settings → Integrations</span><p class="text-sm text-neutral-400 mt-1">Único caminho oficial para registrar BYOK no OpenRouter</p></div>
-          <div class="bg-dark-700 rounded-lg p-3"><span class="text-blue-400 font-semibold">Slot por provedor</span><p class="text-sm text-neutral-400 mt-1">Cada provedor tem seu campo — não confunda DeepSeek com OpenAI ou Anthropic</p></div>
-          <div class="bg-dark-700 rounded-lg p-3"><span class="text-blue-400 font-semibold">Validação automática</span><p class="text-sm text-neutral-400 mt-1">OR faz uma chamada de teste ao salvar — chave inválida não fica ativa</p></div>
+          <div class="bg-dark-700 rounded-lg p-3"><span class="text-blue-400 font-semibold">Slot por provedor</span><p class="text-sm text-neutral-400 mt-1">Cada provedor tem seu campo — nêo confunda DeepSeek com OpenAI ou Anthropic</p></div>
+          <div class="bg-dark-700 rounded-lg p-3"><span class="text-blue-400 font-semibold">Validaçêo automática</span><p class="text-sm text-neutral-400 mt-1">OR faz uma chamada de teste ao salvar — chave inválida nêo fica ativa</p></div>
           <div class="bg-dark-700 rounded-lg p-3"><span class="text-blue-400 font-semibold">API permanece igual</span><p class="text-sm text-neutral-400 mt-1">Sem mudança no código cliente — apenas o roteamento interno do OR muda</p></div>
         </div>
       </div>
@@ -404,7 +404,7 @@
 
       <div class="bg-dark-800/50 rounded-xl border border-blue-500/20 p-6 mb-6">
         <h3 class="text-sm font-semibold text-blue-400 mb-2">O que é</h3>
-        <p class="text-neutral-300">A configuração de Worker no Hermes mapeia o papel lógico ("Worker") a um modelo concreto (DeepSeek V4 via OpenRouter) e fixa parâmetros como temperature e max_tokens, que controlam diversidade de ângulos e tamanho da resposta por chamada.</p>
+        <p class="text-neutral-300">A configuraçêo de Worker no Hermes mapeia o papel lógico ("Worker") a um modelo concreto (DeepSeek V4 via OpenRouter) e fixa parâmetros como temperature e max_tokens, que controlam diversidade de ângulos e tamanho da resposta por chamada.</p>
       </div>
 
       <div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-6">
@@ -450,7 +450,7 @@ hermes config set models.worker.max_tokens 8000</code></pre>
           <div class="bg-dark-700 rounded-lg p-3"><span class="text-blue-400 font-semibold">Papel ≠ modelo</span><p class="text-sm text-neutral-400 mt-1">Worker é um papel lógico — modelo concreto é configurável e trocável</p></div>
           <div class="bg-dark-700 rounded-lg p-3"><span class="text-blue-400 font-semibold">Temperature 0.7 para Worker</span><p class="text-sm text-neutral-400 mt-1">Faixa que equilibra divergência entre ângulos e coerência interna</p></div>
           <div class="bg-dark-700 rounded-lg p-3"><span class="text-blue-400 font-semibold">max_tokens dimensiona orçamento</span><p class="text-sm text-neutral-400 mt-1">Limite por chamada — define quando PARTIAL_DELIVERY deve disparar</p></div>
-          <div class="bg-dark-700 rounded-lg p-3"><span class="text-blue-400 font-semibold">Fallback explícito on_429</span><p class="text-sm text-neutral-400 mt-1">Espera-e-retenta evita que rate limit eventual mate a sessão inteira</p></div>
+          <div class="bg-dark-700 rounded-lg p-3"><span class="text-blue-400 font-semibold">Fallback explícito on_429</span><p class="text-sm text-neutral-400 mt-1">Espera-e-retenta evita que rate limit eventual mate a sessêo inteira</p></div>
         </div>
       </div>
     </section>
@@ -462,12 +462,12 @@ hermes config set models.worker.max_tokens 8000</code></pre>
         <h2 class="text-2xl font-bold">🧪 Testando o Worker — tarefa ponta a ponta</h2>
       </div>
       <p class="text-neutral-300 mb-6 leading-relaxed">
-        Antes de rodar overnight, valide com uma tarefa pequena. <strong class="text-blue-400">Você quer confirmar três coisas:</strong> a chamada chega no DeepSeek (não no pool OR), os logs do Worker estão isolados, e o Crítico recebe um draft válido em formato esperado.
+        Antes de rodar overnight, valide com uma tarefa pequena. <strong class="text-blue-400">Você quer confirmar três coisas:</strong> a chamada chega no DeepSeek (nêo no pool OR), os logs do Worker estêo isolados, e o Crítico recebe um draft válido em formato esperado.
       </p>
 
       <div class="bg-dark-800/50 rounded-xl border border-blue-500/20 p-6 mb-6">
         <h3 class="text-sm font-semibold text-blue-400 mb-2">O que é</h3>
-        <p class="text-neutral-300">Um teste ponta a ponta é uma tarefa real, pequena e barata (1 iteração, 2–3 ângulos) executada com o objetivo único de validar pipeline — chave BYOK ativa, modelo respondendo, logs gravando, Crítico consumindo o output.</p>
+        <p class="text-neutral-300">Um teste ponta a ponta é uma tarefa real, pequena e barata (1 iteraçêo, 2–3 ângulos) executada com o objetivo único de validar pipeline — chave BYOK ativa, modelo respondendo, logs gravando, Crítico consumindo o output.</p>
       </div>
 
       <div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-6">
@@ -504,10 +504,10 @@ hermes run --task "Liste 3 ângulos sobre nichos B2B locais" \
       <div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
         <h3 class="text-lg font-semibold mb-4">🔑 Conceitos-chave</h3>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-          <div class="bg-dark-700 rounded-lg p-3"><span class="text-blue-400 font-semibold">Tarefa de fumaça</span><p class="text-sm text-neutral-400 mt-1">Pequena, barata, com objetivo único de validar pipeline — não qualidade</p></div>
+          <div class="bg-dark-700 rounded-lg p-3"><span class="text-blue-400 font-semibold">Tarefa de fumaça</span><p class="text-sm text-neutral-400 mt-1">Pequena, barata, com objetivo único de validar pipeline — nêo qualidade</p></div>
           <div class="bg-dark-700 rounded-lg p-3"><span class="text-blue-400 font-semibold">Logs isolados por papel</span><p class="text-sm text-neutral-400 mt-1"><span class="font-mono">worker.log</span> separado de <span class="font-mono">critic.log</span> facilita debug cirúrgico</p></div>
           <div class="bg-dark-700 rounded-lg p-3"><span class="text-blue-400 font-semibold">Flag byok=true</span><p class="text-sm text-neutral-400 mt-1">Indicador objetivo de que o roteamento BYOK está ativo na chamada</p></div>
-          <div class="bg-dark-700 rounded-lg p-3"><span class="text-blue-400 font-semibold">Validação antes do overnight</span><p class="text-sm text-neutral-400 mt-1">10 minutos de teste evitam acordar com pipeline quebrado às 3am</p></div>
+          <div class="bg-dark-700 rounded-lg p-3"><span class="text-blue-400 font-semibold">Validaçêo antes do overnight</span><p class="text-sm text-neutral-400 mt-1">10 minutos de teste evitam acordar com pipeline quebrado às 3am</p></div>
         </div>
       </div>
     </section>
@@ -519,12 +519,12 @@ hermes run --task "Liste 3 ângulos sobre nichos B2B locais" \
         <h2 class="text-2xl font-bold">📈 Monitorando uso e custo no primeiro ciclo real</h2>
       </div>
       <p class="text-neutral-300 mb-6 leading-relaxed">
-        Depois do teste de fumaça, rode um ciclo real e <strong class="text-blue-400">calibre custo + verificação BYOK em duas frentes</strong>: a página de Activity do OpenRouter e o dashboard de billing do DeepSeek. Os números têm que bater.
+        Depois do teste de fumaça, rode um ciclo real e <strong class="text-blue-400">calibre custo + verificaçêo BYOK em duas frentes</strong>: a página de Activity do OpenRouter e o dashboard de billing do DeepSeek. Os números têm que bater.
       </p>
 
       <div class="bg-dark-800/50 rounded-xl border border-blue-500/20 p-6 mb-6">
         <h3 class="text-sm font-semibold text-blue-400 mb-2">O que é</h3>
-        <p class="text-neutral-300">A calibragem do primeiro ciclo é o processo de cruzar três fontes — Activity do OR, billing do DeepSeek e logs do Hermes — para confirmar que: (a) as chamadas DeepSeek estão marcadas como BYOK no OR, (b) o débito está saindo do crédito DeepSeek e não do crédito OR, (c) o custo total bate com a estimativa.</p>
+        <p class="text-neutral-300">A calibragem do primeiro ciclo é o processo de cruzar três fontes — Activity do OR, billing do DeepSeek e logs do Hermes — para confirmar que: (a) as chamadas DeepSeek estêo marcadas como BYOK no OR, (b) o débito está saindo do crédito DeepSeek e nêo do crédito OR, (c) o custo total bate com a estimativa.</p>
       </div>
 
       <div class="bg-gradient-to-br from-blue-900/30 to-dark-800 rounded-xl border border-blue-500/30 p-6 mb-6">
@@ -544,7 +544,7 @@ hermes run --task "Liste 3 ângulos sobre nichos B2B locais" \
         </h3>
         <p class="text-neutral-300 mb-3">Conta típica de uma tarefa do Triad com DeepSeek como Worker:</p>
         <pre class="bg-dark-700/50 rounded-lg p-4 font-mono text-xs text-neutral-300 overflow-x-auto"><code>Iterações Worker-Crítico:  3
-Ângulos por iteração:      4
+Ângulos por iteraçêo:      4
 Tokens médios out/ângulo:  3000
 ─────────────────────────────────
 Total tokens Worker out:  36000
@@ -552,7 +552,7 @@ Total tokens Worker in:   ~6000  (briefing + crítica)
 ─────────────────────────────────
 Custo Worker DeepSeek:    poucos centavos
 Custo Crítico (Claude):   dominante na fatura</code></pre>
-        <p class="text-neutral-300 mt-3 text-sm">Conclusão: trocar Worker para DeepSeek BYOK derruba a fatia Worker quase a zero. O custo dominante passa a ser o Crítico — e é nele que a próxima otimização vai mirar.</p>
+        <p class="text-neutral-300 mt-3 text-sm">Conclusêo: trocar Worker para DeepSeek BYOK derruba a fatia Worker quase a zero. O custo dominante passa a ser o Crítico — e é nele que a próxima otimizaçêo vai mirar.</p>
       </div>
 
       <div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-6">
@@ -563,14 +563,14 @@ grep "model=deepseek" ~/.hermes/logs/worker.log | wc -l
 # Quantas marcadas como BYOK
 grep "byok=true" ~/.hermes/logs/worker.log | wc -l
 
-# Devem ser iguais — se não, BYOK não está ativo em todas</code></pre>
+# Devem ser iguais — se nêo, BYOK nêo está ativo em todas</code></pre>
       </div>
 
       <div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
         <h3 class="text-lg font-semibold mb-4">🔑 Conceitos-chave</h3>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
           <div class="bg-dark-700 rounded-lg p-3"><span class="text-blue-400 font-semibold">Três fontes cruzadas</span><p class="text-sm text-neutral-400 mt-1">OR Activity + DeepSeek Usage + worker.log — números têm que coincidir</p></div>
-          <div class="bg-dark-700 rounded-lg p-3"><span class="text-blue-400 font-semibold">Tag BYOK no Activity</span><p class="text-sm text-neutral-400 mt-1">Confirmação visual de que a call não consumiu crédito do OR</p></div>
+          <div class="bg-dark-700 rounded-lg p-3"><span class="text-blue-400 font-semibold">Tag BYOK no Activity</span><p class="text-sm text-neutral-400 mt-1">Confirmaçêo visual de que a call nêo consumiu crédito do OR</p></div>
           <div class="bg-dark-700 rounded-lg p-3"><span class="text-blue-400 font-semibold">Custo Worker → quase zero</span><p class="text-sm text-neutral-400 mt-1">DeepSeek BYOK derruba a fatia Worker; foco vai para o Crítico</p></div>
           <div class="bg-dark-700 rounded-lg p-3"><span class="text-blue-400 font-semibold">Grep como auditor</span><p class="text-sm text-neutral-400 mt-1">Contagem simples de linhas no log valida cobertura BYOK em 100% das calls</p></div>
         </div>
@@ -603,7 +603,7 @@ grep "byok=true" ~/.hermes/logs/worker.log | wc -l
           </div>
           <div class="flex items-start space-x-3">
             <span class="text-blue-400 mt-1">✓</span>
-            <div><strong class="text-white">Teste de fumaça antes do overnight</strong><span class="text-neutral-400"> — tail no worker.log + tarefa de 1 iteração validam pipeline em minutos</span></div>
+            <div><strong class="text-white">Teste de fumaça antes do overnight</strong><span class="text-neutral-400"> — tail no worker.log + tarefa de 1 iteraçêo validam pipeline em minutos</span></div>
           </div>
           <div class="flex items-start space-x-3">
             <span class="text-blue-400 mt-1">✓</span>
@@ -613,7 +613,7 @@ grep "byok=true" ~/.hermes/logs/worker.log | wc -l
 
         <div class="bg-dark-800/50 rounded-lg p-4 mb-8">
           <h3 class="font-semibold text-blue-400 mb-2">Próximo Módulo:</h3>
-          <p class="text-neutral-300">2.4 — Gemini CLI: instalação, autenticação e uso como Worker complementar</p>
+          <p class="text-neutral-300">2.4 — Gemini CLI: instalaçêo, autenticaçêo e uso como Worker complementar</p>
         </div>
 
         <div class="flex flex-col sm:flex-row gap-4">

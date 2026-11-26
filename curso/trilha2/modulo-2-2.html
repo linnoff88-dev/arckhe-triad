@@ -176,7 +176,7 @@
         </h3>
         <ol class="space-y-3 text-neutral-300 list-decimal list-inside">
           <li>Acesse <span class="font-mono text-blue-300">openrouter.ai</span> e clique em <strong>Sign in</strong></li>
-          <li>Escolha autenticação por <strong>Google</strong>, <strong>GitHub</strong> ou <strong>email</strong> (OAuth é mais rápido)</li>
+          <li>Escolha autenticaçêo por <strong>Google</strong>, <strong>GitHub</strong> ou <strong>email</strong> (OAuth é mais rápido)</li>
           <li>Confirme o email (caso tenha usado email/senha)</li>
           <li>Adicione créditos iniciais em <span class="font-mono text-blue-300">Settings → Credits</span> ($10 cobre semanas de uso normal)</li>
           <li>Pronto — você já pode gerar a primeira API key</li>
@@ -185,7 +185,7 @@
 
       <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
         <h3 class="text-lg font-semibold text-primary mb-3 flex items-center">
-          <span class="mr-2">💡</span> Por que OpenRouter (e não os provedores diretos)
+          <span class="mr-2">💡</span> Por que OpenRouter (e nêo os provedores diretos)
         </h3>
         <p class="text-neutral-300">Com uma única chave, o Triad chama Opus para o Condutor, DeepSeek para o Worker e GPT-5.5 para o Crítico — sem orquestrar três contas, três faturas e três limites de rate independentes. Custo, observabilidade e fallback ficam em um lugar só.</p>
       </div>
@@ -195,8 +195,8 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
           <div class="bg-dark-700 rounded-lg p-3"><span class="text-blue-400 font-semibold">Gateway unificado</span><p class="text-sm text-neutral-400 mt-1">Uma conta, uma chave, todos os principais provedores de LLM acessíveis</p></div>
           <div class="bg-dark-700 rounded-lg p-3"><span class="text-blue-400 font-semibold">Faturamento centralizado</span><p class="text-sm text-neutral-400 mt-1">Créditos pré-pagos em USD consumidos em todos os modelos sob a mesma conta</p></div>
-          <div class="bg-dark-700 rounded-lg p-3"><span class="text-blue-400 font-semibold">OAuth recomendado</span><p class="text-sm text-neutral-400 mt-1">Google ou GitHub aceleram o cadastro e evitam confirmação de email</p></div>
-          <div class="bg-dark-700 rounded-lg p-3"><span class="text-blue-400 font-semibold">Crédito inicial mínimo</span><p class="text-sm text-neutral-400 mt-1">$10 são suficientes para semanas de exercícios e validação do Triad</p></div>
+          <div class="bg-dark-700 rounded-lg p-3"><span class="text-blue-400 font-semibold">OAuth recomendado</span><p class="text-sm text-neutral-400 mt-1">Google ou GitHub aceleram o cadastro e evitam confirmaçêo de email</p></div>
+          <div class="bg-dark-700 rounded-lg p-3"><span class="text-blue-400 font-semibold">Crédito inicial mínimo</span><p class="text-sm text-neutral-400 mt-1">$10 sêo suficientes para semanas de exercícios e validaçêo do Triad</p></div>
         </div>
       </div>
     </section>
@@ -221,7 +221,7 @@
         <div class="code-block rounded-lg p-4 font-mono text-sm space-y-2 overflow-x-auto">
           <p class="text-neutral-500"># 1. Em openrouter.ai/keys clique em "Create Key"</p>
           <p class="text-neutral-500"># 2. Nomeie ("triad-laptop", "triad-prod"), opcionalmente defina limite de crédito</p>
-          <p class="text-neutral-500"># 3. Copie IMEDIATAMENTE — a chave não é exibida novamente</p>
+          <p class="text-neutral-500"># 3. Copie IMEDIATAMENTE — a chave nêo é exibida novamente</p>
           <p class="text-emerald-300">export OPENROUTER_API_KEY=<span class="text-amber-300">"sk-or-v1-abc123...xyz"</span></p>
           <p class="text-neutral-500"># Persistir no shell (zsh)</p>
           <p class="text-blue-300">echo <span class="text-amber-300">'export OPENROUTER_API_KEY="sk-or-v1-..."'</span> &gt;&gt; ~/.zshrc</p>
@@ -231,12 +231,12 @@
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
         <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
-          <h4 class="font-bold text-red-400 mb-4">✗ Como NÃO tratar a chave</h4>
+          <h4 class="font-bold text-red-400 mb-4">✗ Como NêO tratar a chave</h4>
           <ul class="space-y-2 text-neutral-300 text-sm">
             <li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Commitada em <span class="font-mono">.env</span> versionado no Git</span></li>
             <li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Colada em chat, Slack ou ticket</span></li>
             <li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Hardcoded em arquivo <span class="font-mono">config.json</span> de exemplo</span></li>
-            <li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Mesma chave usada em laptop pessoal e produção</span></li>
+            <li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Mesma chave usada em laptop pessoal e produçêo</span></li>
             <li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Sem limite de crédito — vazamento = fatura aberta</span></li>
           </ul>
         </div>
@@ -247,7 +247,7 @@
             <li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>Uma chave por máquina/ambiente, com nome descritivo</span></li>
             <li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>Limite de crédito por chave em <span class="font-mono">openrouter.ai/keys</span></span></li>
             <li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span><span class="font-mono">.env</span> sempre no <span class="font-mono">.gitignore</span></span></li>
-            <li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>Revogação imediata se houver suspeita de exposição</span></li>
+            <li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>Revogaçêo imediata se houver suspeita de exposiçêo</span></li>
           </ul>
         </div>
       </div>
@@ -256,7 +256,7 @@
         <h3 class="text-lg font-semibold text-primary mb-3 flex items-center">
           <span class="mr-2">💡</span> Dica de blast radius
         </h3>
-        <p class="text-neutral-300">Defina um <strong>credit limit</strong> por chave (ex.: $20). Se a chave vazar, o prejuízo máximo é o limite — não a sua conta inteira. Custo zero, proteção real.</p>
+        <p class="text-neutral-300">Defina um <strong>credit limit</strong> por chave (ex.: $20). Se a chave vazar, o prejuízo máximo é o limite — nêo a sua conta inteira. Custo zero, proteçêo real.</p>
       </div>
 
       <div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
@@ -265,7 +265,7 @@
           <div class="bg-dark-700 rounded-lg p-3"><span class="text-blue-400 font-semibold">Formato sk-or-v1-...</span><p class="text-sm text-neutral-400 mt-1">Prefixo identifica origem OpenRouter, útil para detectar vazamento em scanners</p></div>
           <div class="bg-dark-700 rounded-lg p-3"><span class="text-blue-400 font-semibold">Chave por escopo</span><p class="text-sm text-neutral-400 mt-1">Uma chave por máquina ou ambiente reduz blast radius em caso de vazamento</p></div>
           <div class="bg-dark-700 rounded-lg p-3"><span class="text-blue-400 font-semibold">Credit limit por chave</span><p class="text-sm text-neutral-400 mt-1">Limite financeiro individual transforma vazamento em incidente contido</p></div>
-          <div class="bg-dark-700 rounded-lg p-3"><span class="text-blue-400 font-semibold">Env var como padrão</span><p class="text-sm text-neutral-400 mt-1">Variável de ambiente é o ponto único que o Hermes consulta para autenticação</p></div>
+          <div class="bg-dark-700 rounded-lg p-3"><span class="text-blue-400 font-semibold">Env var como padrêo</span><p class="text-sm text-neutral-400 mt-1">Variável de ambiente é o ponto único que o Hermes consulta para autenticaçêo</p></div>
         </div>
       </div>
     </section>
@@ -277,12 +277,12 @@
         <h2 class="text-2xl font-bold">🔌 Configurando OpenRouter no Hermes</h2>
       </div>
       <p class="text-neutral-300 mb-6 leading-relaxed">
-        O Hermes lê os provedores em <span class="font-mono text-blue-400">~/.hermes/config.json</span>. O comando <span class="font-mono text-blue-400">hermes setup model</span> guia a configuração interativa — mas conhecer o JSON manual é o que dá controle real.
+        O Hermes lê os provedores em <span class="font-mono text-blue-400">~/.hermes/config.json</span>. O comando <span class="font-mono text-blue-400">hermes setup model</span> guia a configuraçêo interativa — mas conhecer o JSON manual é o que dá controle real.
       </p>
 
       <div class="bg-dark-800/50 rounded-xl border border-blue-500/20 p-6 mb-6">
         <h3 class="text-sm font-semibold text-blue-400 mb-2">O que é</h3>
-        <p class="text-neutral-300">O arquivo de configuração do Hermes mapeia papéis do Triad (Condutor, Worker, Crítico) para modelos específicos via providers. OpenRouter é declarado uma vez como provider, e cada papel referencia um modelo no formato <span class="font-mono text-blue-300">provider/model-id</span>.</p>
+        <p class="text-neutral-300">O arquivo de configuraçêo do Hermes mapeia papéis do Triad (Condutor, Worker, Crítico) para modelos específicos via providers. OpenRouter é declarado uma vez como provider, e cada papel referencia um modelo no formato <span class="font-mono text-blue-300">provider/model-id</span>.</p>
       </div>
 
       <div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-6">
@@ -319,7 +319,7 @@
 
       <div class="bg-gradient-to-br from-blue-900/30 to-dark-800 rounded-xl border border-blue-500/30 p-6 mb-6">
         <h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center">
-          <span class="mr-2">🧭</span> Por que <span class="font-mono ml-1">api_key_env</span> e não a chave direta
+          <span class="mr-2">🧭</span> Por que <span class="font-mono ml-1">api_key_env</span> e nêo a chave direta
         </h3>
         <p class="text-neutral-300">O config.json fica no disco, possivelmente no Dropbox, possivelmente sincronizado por algum agente. Guardar apenas o <strong>nome da variável de ambiente</strong> mantém o config compartilhável (e até versionável) sem nunca expor o segredo.</p>
       </div>
@@ -329,7 +329,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
           <div class="bg-dark-700 rounded-lg p-3"><span class="text-blue-400 font-semibold">Mapa papel → modelo</span><p class="text-sm text-neutral-400 mt-1">O config.json é literal: <span class="font-mono">conductor</span>, <span class="font-mono">worker</span>, <span class="font-mono">critic</span> apontam para model IDs</p></div>
           <div class="bg-dark-700 rounded-lg p-3"><span class="text-blue-400 font-semibold">Formato provider/model-id</span><p class="text-sm text-neutral-400 mt-1">OpenRouter usa namespace explícito: <span class="font-mono">anthropic/...</span>, <span class="font-mono">deepseek/...</span></p></div>
-          <div class="bg-dark-700 rounded-lg p-3"><span class="text-blue-400 font-semibold">api_key_env como indireção</span><p class="text-sm text-neutral-400 mt-1">Config aponta para variável de ambiente — segredo nunca entra no arquivo</p></div>
+          <div class="bg-dark-700 rounded-lg p-3"><span class="text-blue-400 font-semibold">api_key_env como indireçêo</span><p class="text-sm text-neutral-400 mt-1">Config aponta para variável de ambiente — segredo nunca entra no arquivo</p></div>
           <div class="bg-dark-700 rounded-lg p-3"><span class="text-blue-400 font-semibold">Setup interativo vs manual</span><p class="text-sm text-neutral-400 mt-1">O comando guia o primeiro setup; editar o JSON manualmente dá controle fino depois</p></div>
         </div>
       </div>
@@ -339,7 +339,7 @@
     <section id="topico-4" class="mb-16">
       <div class="flex items-center space-x-4 mb-6">
         <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl flex-shrink-0">4</span>
-        <h2 class="text-2xl font-bold">✅ Testando a conexão — smoke test</h2>
+        <h2 class="text-2xl font-bold">✅ Testando a conexêo — smoke test</h2>
       </div>
       <p class="text-neutral-300 mb-6 leading-relaxed">
         Antes de despachar o primeiro briefing do Condutor, valide o caminho inteiro: chave → OpenRouter → modelo → resposta. <strong class="text-blue-400">Um curl manual com DeepSeek</strong> isola problemas de auth e roteamento sem o overhead do Hermes.
@@ -351,7 +351,7 @@
       </div>
 
       <div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-6">
-        <h3 class="text-lg font-semibold mb-4">📝 Curl de validação</h3>
+        <h3 class="text-lg font-semibold mb-4">📝 Curl de validaçêo</h3>
         <div class="code-block rounded-lg p-4 font-mono text-sm space-y-1 overflow-x-auto">
           <p class="text-blue-300">curl -X POST https://openrouter.ai/api/v1/chat/completions \</p>
           <p class="text-neutral-300 ml-4">-H <span class="text-amber-300">"Authorization: Bearer $OPENROUTER_API_KEY"</span> \</p>
@@ -418,9 +418,9 @@
         </h3>
         <div class="space-y-3 text-neutral-300">
           <div class="flex items-start space-x-3"><span class="text-blue-400 mt-1 font-mono flex-shrink-0">/activity</span><span>Log de chamadas individuais — modelo, tokens, custo, status. O endpoint mais útil em debugging.</span></div>
-          <div class="flex items-start space-x-3"><span class="text-blue-400 mt-1 font-mono flex-shrink-0">/credits</span><span>Saldo atual em USD, histórico de recargas, projeção de queima ao ritmo atual.</span></div>
+          <div class="flex items-start space-x-3"><span class="text-blue-400 mt-1 font-mono flex-shrink-0">/credits</span><span>Saldo atual em USD, histórico de recargas, projeçêo de queima ao ritmo atual.</span></div>
           <div class="flex items-start space-x-3"><span class="text-blue-400 mt-1 font-mono flex-shrink-0">/models</span><span>Catálogo completo: preço por 1M tokens, janela de contexto, capacidades (tools, vision).</span></div>
-          <div class="flex items-start space-x-3"><span class="text-blue-400 mt-1 font-mono flex-shrink-0">/keys</span><span>Gestão de chaves: criar, renomear, definir limites, revogar.</span></div>
+          <div class="flex items-start space-x-3"><span class="text-blue-400 mt-1 font-mono flex-shrink-0">/keys</span><span>Gestêo de chaves: criar, renomear, definir limites, revogar.</span></div>
           <div class="flex items-start space-x-3"><span class="text-blue-400 mt-1 font-mono flex-shrink-0">/settings</span><span>Preferências de roteamento, fallback de provider, privacy mode.</span></div>
         </div>
       </div>
@@ -450,15 +450,15 @@
     <section id="topico-6" class="mb-16">
       <div class="flex items-center space-x-4 mb-6">
         <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl flex-shrink-0">6</span>
-        <h2 class="text-2xl font-bold">🎯 Selecionando modelos padrão por papel do Triad</h2>
+        <h2 class="text-2xl font-bold">🎯 Selecionando modelos padrêo por papel do Triad</h2>
       </div>
       <p class="text-neutral-300 mb-6 leading-relaxed">
-        Os três papéis do Triad têm perfis de carga radicalmente diferentes. <strong class="text-blue-400">Condutor pensa devagar e profundo, Worker gera volume, Crítico julga rápido</strong> — e os modelos padrão refletem exatamente isso.
+        Os três papéis do Triad têm perfis de carga radicalmente diferentes. <strong class="text-blue-400">Condutor pensa devagar e profundo, Worker gera volume, Crítico julga rápido</strong> — e os modelos padrêo refletem exatamente isso.
       </p>
 
       <div class="bg-dark-800/50 rounded-xl border border-blue-500/20 p-6 mb-6">
         <h3 class="text-sm font-semibold text-blue-400 mb-2">O que é</h3>
-        <p class="text-neutral-300">A seleção de modelos por papel é uma decisão de design do Triad: cada papel recebe o modelo cuja relação custo-benefício é melhor <em>para aquela função específica</em>, em vez de usar o modelo top-de-linha para tudo (caro e desnecessário).</p>
+        <p class="text-neutral-300">A seleçêo de modelos por papel é uma decisêo de design do Triad: cada papel recebe o modelo cuja relaçêo custo-benefício é melhor <em>para aquela funçêo específica</em>, em vez de usar o modelo top-de-linha para tudo (caro e desnecessário).</p>
       </div>
 
       <div class="space-y-4 mb-6">
@@ -477,7 +477,7 @@
           </div>
           <div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600">
             <h4 class="font-semibold mb-2 text-blue-400">Executor → <span class="font-mono">deepseek/deepseek-chat</span></h4>
-            <p class="text-sm text-neutral-400">Gera 3–5 ângulos por iteração, possivelmente em loop. Custo importa muito aqui. DeepSeek entrega qualidade competitiva a uma fração do preço dos modelos premium.</p>
+            <p class="text-sm text-neutral-400">Gera 3–5 ângulos por iteraçêo, possivelmente em loop. Custo importa muito aqui. DeepSeek entrega qualidade competitiva a uma fraçêo do preço dos modelos premium.</p>
           </div>
         </div>
         <div class="flex items-start space-x-4">
@@ -486,13 +486,13 @@
           </div>
           <div class="flex-1 bg-dark-800 rounded-xl p-5 border border-dark-600">
             <h4 class="font-semibold mb-2 text-blue-400">Crítico → <span class="font-mono">openai/gpt-5.5</span></h4>
-            <p class="text-sm text-neutral-400">Julga SHIP/REVISE com base em critérios. Precisa de raciocínio sólido e perfil de calibração diferente do Executor — modelo de outra família reduz convergência cega.</p>
+            <p class="text-sm text-neutral-400">Julga SHIP/REVISE com base em critérios. Precisa de raciocínio sólido e perfil de calibraçêo diferente do Executor — modelo de outra família reduz convergência cega.</p>
           </div>
         </div>
       </div>
 
       <div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-6">
-        <h3 class="text-lg font-semibold mb-4">📄 Configuração completa de referência</h3>
+        <h3 class="text-lg font-semibold mb-4">📄 Configuraçêo completa de referência</h3>
         <div class="code-block rounded-lg p-4 font-mono text-sm space-y-1 overflow-x-auto">
           <p class="text-neutral-300">{</p>
           <p class="text-neutral-300 ml-4"><span class="text-blue-300">"providers"</span>: {</p>
@@ -513,7 +513,7 @@
 
       <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
         <h3 class="text-lg font-semibold text-primary mb-3 flex items-center">
-          <span class="mr-2">💡</span> Heterogeneidade é feature, não bug
+          <span class="mr-2">💡</span> Heterogeneidade é feature, nêo bug
         </h3>
         <p class="text-neutral-300">Usar três famílias de modelos diferentes (Anthropic + DeepSeek + OpenAI) reduz <strong>convergência cega</strong> — o risco de três instâncias do mesmo modelo concordarem por viés compartilhado em vez de por mérito do argumento.</p>
       </div>
@@ -523,7 +523,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
           <div class="bg-dark-700 rounded-lg p-3"><span class="text-blue-400 font-semibold">Modelo por perfil de carga</span><p class="text-sm text-neutral-400 mt-1">Baixa frequência + alto impacto = premium; alta frequência = custo otimizado</p></div>
           <div class="bg-dark-700 rounded-lg p-3"><span class="text-blue-400 font-semibold">Heterogeneidade entre papéis</span><p class="text-sm text-neutral-400 mt-1">Famílias diferentes reduzem convergência cega no julgamento</p></div>
-          <div class="bg-dark-700 rounded-lg p-3"><span class="text-blue-400 font-semibold">Configuração declarativa</span><p class="text-sm text-neutral-400 mt-1">Trocar de modelo é editar uma linha — não refatorar código</p></div>
+          <div class="bg-dark-700 rounded-lg p-3"><span class="text-blue-400 font-semibold">Configuraçêo declarativa</span><p class="text-sm text-neutral-400 mt-1">Trocar de modelo é editar uma linha — nêo refatorar código</p></div>
           <div class="bg-dark-700 rounded-lg p-3"><span class="text-blue-400 font-semibold">Defaults globais</span><p class="text-sm text-neutral-400 mt-1">Temperature e max_tokens herdados por todos os papéis, sobrescritíveis por chamada</p></div>
         </div>
       </div>
@@ -536,37 +536,37 @@
         <h2 class="text-2xl font-bold">🚨 Troubleshooting — erros comuns</h2>
       </div>
       <p class="text-neutral-300 mb-6 leading-relaxed">
-        Quatro códigos cobrem 95% dos incidentes de conexão. <strong class="text-blue-400">Reconhecer cada um em segundos</strong> — pelo status code, antes de ler a mensagem — corta tempo de diagnóstico drasticamente.
+        Quatro códigos cobrem 95% dos incidentes de conexêo. <strong class="text-blue-400">Reconhecer cada um em segundos</strong> — pelo status code, antes de ler a mensagem — corta tempo de diagnóstico drasticamente.
       </p>
 
       <div class="bg-dark-800/50 rounded-xl border border-blue-500/20 p-6 mb-6">
         <h3 class="text-sm font-semibold text-blue-400 mb-2">O que é</h3>
-        <p class="text-neutral-300">O OpenRouter retorna status HTTP padrão; cada código mapeia para uma classe de problema com remediação específica. Conhecer o mapa elimina o "google a mensagem de erro" da sua rota de debugging.</p>
+        <p class="text-neutral-300">O OpenRouter retorna status HTTP padrêo; cada código mapeia para uma classe de problema com remediaçêo específica. Conhecer o mapa elimina o "google a mensagem de erro" da sua rota de debugging.</p>
       </div>
 
       <div class="space-y-4 mb-6">
         <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-5">
           <h4 class="font-bold text-red-400 mb-2 font-mono">401 — Unauthorized</h4>
           <p class="text-sm text-neutral-300 mb-2"><strong>Causa:</strong> chave inválida, expirada, revogada ou ausente.</p>
-          <p class="text-sm text-neutral-400"><strong>Remediação:</strong> <span class="font-mono text-blue-300">echo $OPENROUTER_API_KEY</span> para confirmar que está carregada; em <span class="font-mono">openrouter.ai/keys</span> verifique status; gere nova chave se necessário.</p>
+          <p class="text-sm text-neutral-400"><strong>Remediaçêo:</strong> <span class="font-mono text-blue-300">echo $OPENROUTER_API_KEY</span> para confirmar que está carregada; em <span class="font-mono">openrouter.ai/keys</span> verifique status; gere nova chave se necessário.</p>
         </div>
 
         <div class="bg-amber-900/20 rounded-xl border border-amber-500/30 p-5">
           <h4 class="font-bold text-amber-400 mb-2 font-mono">404 — Not Found (modelo)</h4>
           <p class="text-sm text-neutral-300 mb-2"><strong>Causa:</strong> model ID errado, modelo descontinuado ou typo no formato <span class="font-mono">provider/model</span>.</p>
-          <p class="text-sm text-neutral-400"><strong>Remediação:</strong> consulte <span class="font-mono">openrouter.ai/models</span> e copie o ID exato. Exemplo comum: <span class="font-mono text-red-300">deepseek/chat</span> (errado) vs <span class="font-mono text-emerald-300">deepseek/deepseek-chat</span> (certo).</p>
+          <p class="text-sm text-neutral-400"><strong>Remediaçêo:</strong> consulte <span class="font-mono">openrouter.ai/models</span> e copie o ID exato. Exemplo comum: <span class="font-mono text-red-300">deepseek/chat</span> (errado) vs <span class="font-mono text-emerald-300">deepseek/deepseek-chat</span> (certo).</p>
         </div>
 
         <div class="bg-orange-900/20 rounded-xl border border-orange-500/30 p-5">
           <h4 class="font-bold text-orange-400 mb-2 font-mono">429 — Too Many Requests</h4>
           <p class="text-sm text-neutral-300 mb-2"><strong>Causa:</strong> rate limit do provider upstream estourado (ou crédito esgotado).</p>
-          <p class="text-sm text-neutral-400"><strong>Remediação:</strong> aguarde o intervalo do header <span class="font-mono">Retry-After</span>; verifique saldo em <span class="font-mono">/credits</span>; configure fallback automático em <span class="font-mono">/settings</span>.</p>
+          <p class="text-sm text-neutral-400"><strong>Remediaçêo:</strong> aguarde o intervalo do header <span class="font-mono">Retry-After</span>; verifique saldo em <span class="font-mono">/credits</span>; configure fallback automático em <span class="font-mono">/settings</span>.</p>
         </div>
 
         <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-5">
           <h4 class="font-bold text-blue-400 mb-2 font-mono">408 / 504 — Timeout</h4>
           <p class="text-sm text-neutral-300 mb-2"><strong>Causa:</strong> provider lento, prompt enorme, ou rede instável.</p>
-          <p class="text-sm text-neutral-400"><strong>Remediação:</strong> retry com backoff exponencial; reduza <span class="font-mono">max_tokens</span> ou contexto; considere fallback de provider via OpenRouter Settings.</p>
+          <p class="text-sm text-neutral-400"><strong>Remediaçêo:</strong> retry com backoff exponencial; reduza <span class="font-mono">max_tokens</span> ou contexto; considere fallback de provider via OpenRouter Settings.</p>
         </div>
       </div>
 
