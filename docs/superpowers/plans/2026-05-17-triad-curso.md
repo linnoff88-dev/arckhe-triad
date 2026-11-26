@@ -2,9 +2,9 @@
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Criar o curso completo "TRIAD — Automaçêo de IA Multi-Modelo com Hermes Agent" em formato INEMA.CLUB, publicado no GitHub Pages, com 4 trilhas, 24 módulos e landing page.
+**Goal:** Criar o curso completo "TRIAD — Automaçêo de IA Multi-Modelo com Hermes Agent" em formato ARCKHÉ AI, publicado no GitHub Pages, com 4 trilhas, 24 módulos e landing page.
 
-**Architecture:** Estrutura de arquivos HTML estáticos seguindo o design system INEMA.CLUB (Tailwind CDN, dark/light mode, cores por trilha). Cada trilha tem um index com cards de módulos e navegaçêo rápida. Cada módulo tem mínimo 6 tópicos com 3 seções cada. A landing page apresenta o curso e as 4 trilhas com CTAs.
+**Architecture:** Estrutura de arquivos HTML estáticos seguindo o design system ARCKHÉ AI (Tailwind CDN, dark/light mode, cores por trilha). Cada trilha tem um index com cards de módulos e navegaçêo rápida. Cada módulo tem mínimo 6 tópicos com 3 seções cada. A landing page apresenta o curso e as 4 trilhas com CTAs.
 
 **Tech Stack:** HTML5, Tailwind CSS (CDN), Inter font (Google Fonts), JavaScript vanilla (theme toggle, modais, expansores de tópico). Referência de template: `/home/nmaldaner/projetos/intelecto-curso/`. Skill de formato: `formato-curso` (MASTER_COMPLETO.md).
 
@@ -354,13 +354,13 @@ mkdir -p /home/nmaldaner/projetos/triad/curso/trilha4
 - 4 cards de trilha com cor, título, descriçêo e CTA para `curso/trilha1/index.html` etc.
 - Seçêo "O que você vai construir" com o diagrama do sistema
 - Seçêo "Para quem é" (iniciantes → avançados → times técnicos)
-- Footer com link INEMA.CLUB (`text-sky-400`)
+- Footer com link ARCKHÉ AI (`text-sky-400`)
 - Dark/light mode toggle
 
 - [ ] Criar `index.html` seguindo base HTML da Sec. 8 do MASTER
 - [ ] Adicionar hero section com gradiente e logo TRIAD
 - [ ] Adicionar 4 cards de trilha (cores: emerald, blue, purple, amber)
-- [ ] Verificar: link INEMA.CLUB presente com `text-sky-400`
+- [ ] Verificar: link ARCKHÉ AI presente com `text-sky-400`
 - [ ] Verificar: theme toggle funcionando
 - [ ] Verificar checklist completo antes de marcar como done
 
@@ -376,11 +376,11 @@ mkdir -p /home/nmaldaner/projetos/triad/curso/trilha4
 - Grid 2×2 com os 4 cards de trilha (cada com descriçêo, módulos listados, CTA)
 - Cada card clicável → `trilha1/index.html` etc.
 - Barra de progresso visual (decorativa)
-- Dark/light mode, link INEMA.CLUB
+- Dark/light mode, link ARCKHÉ AI
 
 - [ ] Criar `curso/index.html` com grid de 4 trilhas
 - [ ] Verificar botões com `justify-start`
-- [ ] Verificar link INEMA.CLUB
+- [ ] Verificar link ARCKHÉ AI
 
 ---
 
@@ -396,7 +396,7 @@ mkdir -p /home/nmaldaner/projetos/triad/curso/trilha4
 - Navegaçêo rápida (grid compacto de 6 cards-âncora) — OBRIGATÓRIA
 - 6 cards de módulo expandíveis com tópicos colapsáveis
 - Cada card com botêo "Ver Completo" → `modulo-1-X.html`
-- Dark/light mode, link INEMA.CLUB
+- Dark/light mode, link ARCKHÉ AI
 
 - [ ] Criar `trilha1/index.html` com cor emerald
 - [ ] Adicionar navegaçêo rápida antes do "Conteúdo detalhado" — OBRIGATÓRIA
@@ -419,7 +419,7 @@ Para cada módulo, seguir estrutura:
 - Navegaçêo prev/next entre módulos
 - Botêo "Voltar à Trilha" → `index.html`
 - Modal com `<iframe>` se necessário
-- Dark/light mode, link INEMA.CLUB
+- Dark/light mode, link ARCKHÉ AI
 
 - [ ] Criar `modulo-1-1.html` (O que é Hermes Agent — 7 tópicos)
 - [ ] Criar `modulo-1-2.html` (O problema de um único modelo — 7 tópicos)
@@ -489,7 +489,7 @@ Para cada módulo, seguir estrutura:
 
 - [ ] Abrir cada página no browser e verificar dark/light mode
 - [ ] Verificar todos os links internos (prev/next, "Ver Completo", "Voltar à Trilha")
-- [ ] Confirmar que TODAS as páginas têm link INEMA.CLUB com `text-sky-400`
+- [ ] Confirmar que TODAS as páginas têm link ARCKHÉ AI com `text-sky-400`
 - [ ] Confirmar navegaçêo rápida em todos os 4 index de trilha
 - [ ] Confirmar mínimo 6 tópicos em todos os 24 módulos
 - [ ] Confirmar 3 seções por tópico em todos os módulos

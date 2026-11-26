@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Deploy técnico do TRIAD — GitHub Pages, GitHub Actions, versionamento semver e distribuiçêo para equipe">
-  <title>Deploy técnico — GitHub Pages e distribuiçêo | TRIAD — INEMA.CLUB</title>
+  <title>Deploy técnico — GitHub Pages e distribuiçêo | TRIAD — ARCKHÉ AI</title>
   <script>
     tailwind.config = {
       darkMode: 'class',
@@ -69,7 +69,7 @@
             <span class="font-bold text-lg hidden sm:inline">TRIAD</span>
           </a>
           <span class="text-neutral-600">|</span>
-          <a href="https://inema.club" target="_blank" rel="noopener noreferrer" class="text-sky-400 hover:text-sky-300 text-sm font-medium">INEMA.CLUB</a>
+          <a href="https://ARCKHÉ AI" target="_blank" rel="noopener noreferrer" class="text-sky-400 hover:text-sky-300 text-sm font-medium">ARCKHÉ AI</a>
         </div>
 
         <div class="flex items-center space-x-1 sm:space-x-2">
@@ -227,19 +227,19 @@ Thumbs.db
       <div class="bg-dark-700/50 rounded-xl border border-dark-600 p-5 mb-6">
         <p class="text-xs text-neutral-500 mb-2 font-mono">Setup via gh CLI</p>
         <pre class="text-sm text-neutral-300 font-mono leading-relaxed"><code># Criar repositório público
-gh repo create inematds/triad --public --source=. --push
+gh repo create linnoff88-dev/triad --public --source=. --push
 
 # Habilitar GitHub Pages no branch main, diretório raiz
-gh api -X POST repos/inematds/triad/pages \
+gh api -X POST repos/linnoff88-dev/triad/pages \
   -f source[branch]=main \
   -f source[path]=/
 
 # Forçar HTTPS (sempre)
-gh api -X PUT repos/inematds/triad/pages \
+gh api -X PUT repos/linnoff88-dev/triad/pages \
   -F https_enforced=true
 
 # Verificar status
-gh api repos/inematds/triad/pages</code></pre>
+gh api repos/linnoff88-dev/triad/pages</code></pre>
       </div>
 
       <div class="bg-gradient-to-br from-amber-900/30 to-dark-800 rounded-xl border border-amber-500/30 p-6 mb-6">
@@ -484,7 +484,7 @@ gh release create v1.0.0 \
   - Trilha 3 (Avançado) — 6 módulos
   - Trilha 4 (Escala) — 6 módulos
 
-  Deploy: https://inematds.github.io/triad/"
+  Deploy: https://linnoff88-dev.github.io/arckhe-/"
 
 # Patch posterior
 git tag -a v1.0.1 -m "Fix light-mode amber contrast"
@@ -557,7 +557,7 @@ gh release create v1.0.1 --notes "Ajuste de contraste WCAG AA em light mode"</co
       <div class="bg-dark-700/50 rounded-xl border border-dark-600 p-5 mb-6">
         <p class="text-xs text-neutral-500 mb-2 font-mono">Onboarding — bloco copy-paste do README</p>
         <pre class="text-sm text-neutral-300 font-mono leading-relaxed"><code># 1. Clone
-git clone https://github.com/inematds/triad.git
+git clone https://github.com/linnoff88-dev/triad.git
 cd triad
 
 # 2. Instalar Hermes globalmente
@@ -618,7 +618,7 @@ hermes status</code></pre>
         <div class="space-y-3 text-neutral-300">
           <div class="flex items-start space-x-3">
             <span class="text-amber-400 font-bold flex-shrink-0">1.</span>
-            <span><strong>GitHub Traffic</strong> — <code>gh api repos/inematds/triad/traffic/views</code> retorna views únicas e totais dos últimos 14 dias. Indica curiosidade técnica.</span>
+            <span><strong>GitHub Traffic</strong> — <code>gh api repos/linnoff88-dev/triad/traffic/views</code> retorna views únicas e totais dos últimos 14 dias. Indica curiosidade técnica.</span>
           </div>
           <div class="flex items-start space-x-3">
             <span class="text-amber-400 font-bold flex-shrink-0">2.</span>
@@ -635,7 +635,7 @@ hermes status</code></pre>
         <p class="text-xs text-neutral-500 mb-2 font-mono">Plausible / Cloudflare Web Analytics no &lt;head&gt;</p>
         <pre class="text-sm text-neutral-300 font-mono leading-relaxed"><code>&lt;!-- Plausible (self-hosted ou cloud) --&gt;
 &lt;script defer
-  data-domain="inematds.github.io"
+  data-domain="linnoff88-dev.github.io"
   src="https://plausible.io/js/script.js"&gt;&lt;/script&gt;
 
 &lt;!-- OU Cloudflare Web Analytics --&gt;
@@ -647,16 +647,16 @@ hermes status</code></pre>
       <div class="bg-dark-700/50 rounded-xl border border-dark-600 p-5 mb-6">
         <p class="text-xs text-neutral-500 mb-2 font-mono">GitHub Traffic via gh CLI</p>
         <pre class="text-sm text-neutral-300 font-mono leading-relaxed"><code># Views das últimas 2 semanas
-gh api repos/inematds/triad/traffic/views
+gh api repos/linnoff88-dev/triad/traffic/views
 
 # Clones — quem está clonando para uso local
-gh api repos/inematds/triad/traffic/clones
+gh api repos/linnoff88-dev/triad/traffic/clones
 
 # Referrers — de onde estêo chegando
-gh api repos/inematds/triad/traffic/popular/referrers
+gh api repos/linnoff88-dev/triad/traffic/popular/referrers
 
 # Páginas mais visitadas
-gh api repos/inematds/triad/traffic/popular/paths</code></pre>
+gh api repos/linnoff88-dev/triad/traffic/popular/paths</code></pre>
       </div>
 
       <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
@@ -732,7 +732,7 @@ gh api repos/inematds/triad/traffic/popular/paths</code></pre>
   <!-- FOOTER -->
   <footer class="border-t border-dark-600 py-8 mt-16">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
-      <p>TRIAD — <a href="https://inema.club" target="_blank" rel="noopener noreferrer" class="text-sky-400 hover:text-sky-300">INEMA.CLUB</a> · 2026</p>
+      <p>TRIAD — <a href="https://ARCKHÉ AI" target="_blank" rel="noopener noreferrer" class="text-sky-400 hover:text-sky-300">ARCKHÉ AI</a> · 2026</p>
     </div>
   </footer>
 
